@@ -1,6 +1,22 @@
 <?php
 
 return [
+    // Angehörigenpflege custom summary keys
+    'care_for_relatives_title' => 'Pflege für Angehörige',
+    'care_for_relatives_intro' => 'Pflege für Angehörige bedeutet, dass Familienmitglieder ihre Liebsten zu Hause pflegen und dabei nicht allein sind. Wir zeigen Schritt für Schritt, wie die Pflege funktioniert, unterstützen im Alltag und sind da, wenn Fragen oder Unsicherheiten auftauchen.',
+    'care_for_relatives_summary' => 'Kurz gesagt: Sie pflegen – wir begleiten. Einfach, sicher und persönlich.',
+    'summary_contact_title' => 'Kontakt',
+    'summary_contact_desc' => 'Sie melden sich bei uns',
+    'summary_consult_title' => 'Beratung',
+    'summary_consult_desc' => 'Wir besprechen Ihre Situation',
+    'summary_plan_title' => 'Planung',
+    'summary_plan_desc' => 'Schritt-für-Schritt-Anleitung für die Pflege',
+    'summary_support_title' => 'Begleitung',
+    'summary_support_desc' => 'Wir unterstützen und stehen jederzeit bereit',
+    'summary_relief_title' => 'Entlastung',
+    'summary_relief_desc' => 'Sicherheit und Unterstützung im Alltag',
+    'summary_adjust_title' => 'Anpassung',
+    'summary_adjust_desc' => 'Regelmässige Kontrolle und Optimierung',
     'nav_brand' => 'Altenpflege',
     'nav_home' => 'Startseite',
     'nav_services' => 'Dienstleistungen',

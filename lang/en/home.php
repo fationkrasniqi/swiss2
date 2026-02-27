@@ -1,6 +1,22 @@
 <?php
 
 return [
+    // Family caregiving custom summary keys
+    'care_for_relatives_title' => 'Family Caregiving',
+    'care_for_relatives_intro' => 'Family caregiving means that relatives care for their loved ones at home and are not alone. We show step by step how care works, support everyday life, and are there when questions or uncertainties arise.',
+    'care_for_relatives_summary' => 'In short: you care – we accompany. Simple, safe, and personal.',
+    'summary_contact_title' => 'Contact',
+    'summary_contact_desc' => 'You contact us',
+    'summary_consult_title' => 'Consultation',
+    'summary_consult_desc' => 'We discuss your situation',
+    'summary_plan_title' => 'Planning',
+    'summary_plan_desc' => 'Step-by-step guidance for care',
+    'summary_support_title' => 'Support',
+    'summary_support_desc' => 'We support and are always there',
+    'summary_relief_title' => 'Relief',
+    'summary_relief_desc' => 'Security and support in everyday life',
+    'summary_adjust_title' => 'Adjustment',
+    'summary_adjust_desc' => 'Regular review and optimization',
     'nav_brand' => 'Elderly Care',
     'nav_home' => 'Home',
     'nav_services' => 'Services',

@@ -1,6 +1,22 @@
 <?php
 
 return [
+    // Kujdesi për të afërmit custom summary keys
+    'care_for_relatives_title' => 'Kujdesi për të afërmit',
+    'care_for_relatives_intro' => 'Kujdesi për të afërmit do të thotë që familjarët kujdesen për të dashurit e tyre në shtëpi dhe nuk janë vetëm. Ne tregojmë hap pas hapi si funksionon kujdesi, mbështesim në përditshmëri dhe jemi aty kur ka pyetje ose pasiguri.',
+    'care_for_relatives_summary' => 'Shkurt: ju kujdeseni – ne ju shoqërojmë. E thjeshtë, e sigurt dhe personale.',
+    'summary_contact_title' => 'Kontakt',
+    'summary_contact_desc' => 'Ju na kontaktoni',
+    'summary_consult_title' => 'Këshillim',
+    'summary_consult_desc' => 'Diskutojmë situatën tuaj',
+    'summary_plan_title' => 'Planifikim',
+    'summary_plan_desc' => 'Udhëzim hap pas hapi për kujdesin',
+    'summary_support_title' => 'Shoqërim',
+    'summary_support_desc' => 'Mbështesim dhe jemi gjithmonë pranë',
+    'summary_relief_title' => 'Lehtësim',
+    'summary_relief_desc' => 'Siguri dhe mbështetje në përditshmëri',
+    'summary_adjust_title' => 'Përshtatje',
+    'summary_adjust_desc' => 'Kontroll i rregullt dhe optimizim',
     'nav_brand' => 'Kujdesi për Pleq',
     'nav_home' => 'Ballina',
     'nav_services' => 'Shërbimet',
