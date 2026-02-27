@@ -1,6 +1,18 @@
 <?php
 
 return [
+    // Titres et options des nouvelles catégories de services
+    'bodycare' => 'Soins personnels',
+    'nutrition' => 'Nutrition',
+    'excretion' => 'Élimination',
+    'mobility' => 'Mobilité',
+    'service_bodycare_shower' => "Aide à la douche ou au bain",
+    'service_bodycare_mouth' => "Soins de la bouche",
+    'service_bodycare_dress' => "Aide à l'habillage et au déshabillage, y compris les bas de contention",
+    'service_nutrition_eating' => "Soutien lors de la prise des repas et des boissons",
+    'service_excretion_toilet' => "Aide à l'utilisation des toilettes et à la gestion de l'incontinence",
+    'service_mobility_move' => "Aide pour se lever, s'allonger et marcher",
+    'service_mobility_position' => "Positionnement et exercices pour prévenir les escarres",
     'page_title' => 'Services pour les clients',
     'page_subtitle' => 'Choisissez les services dont vous avez besoin et nous vous contacterons',
     'form_title' => 'Remplissez le formulaire',

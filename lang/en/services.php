@@ -1,6 +1,18 @@
 <?php
 
 return [
+    // New category titles and service options
+    'bodycare' => 'Personal Care',
+    'nutrition' => 'Nutrition',
+    'excretion' => 'Excretion',
+    'mobility' => 'Mobility',
+    'service_bodycare_shower' => 'Assistance with daily washing and personal care',
+    'service_bodycare_mouth' => 'Mouth, dental and hair care',
+    'service_bodycare_dress' => 'Help with dressing and undressing, including compression stockings',
+    'service_nutrition_eating' => 'Support with eating and fluid intake',
+    'service_excretion_toilet' => 'Help with toileting and incontinence management',
+    'service_mobility_move' => 'Help with getting up, lying down and walking',
+    'service_mobility_position' => 'Positioning and exercises to prevent pressure sores',
     'page_title' => 'Services for Clients',
     'page_subtitle' => 'Select the services you need and we will contact you',
     'form_title' => 'Fill out the form',

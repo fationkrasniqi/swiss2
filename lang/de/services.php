@@ -1,6 +1,19 @@
 <?php
 
 return [
+    // Titujt e kategorive të reja
+    'bodycare' => 'Körperpflege',
+    'nutrition' => 'Ernährung',
+    'excretion' => 'Ausscheidung',
+    'mobility' => 'Mobilität',
+    // Shërbimet për secilën kategori
+    'service_bodycare_shower' => 'Unterstützung bei der täglichen Körperpflege (Duschen, Waschen, Intimpflege)',
+    'service_bodycare_mouth' => 'Mund- und Zahnpflege sowie Haarpflege',
+    'service_bodycare_dress' => 'Hilfe beim An- und Auskleiden inkl. Kompressionsstrümpfe',
+    'service_nutrition_eating' => 'Unterstützung bei der Nahrungs- und Flüssigkeitsaufnahme',
+    'service_excretion_toilet' => 'Hilfe beim Toilettengang und beim Umgang mit Inkontinenzmaterial',
+    'service_mobility_move' => 'Unterstützung beim Aufstehen, Hinlegen und Gehen',
+    'service_mobility_position' => 'Bewegungsförderung und Lagerung zur Vorbeugung von Druckstellen',
     'page_title' => 'Dienstleistungen für Kunden',
     'page_subtitle' => 'Wählen Sie die benötigten Dienstleistungen und wir werden Sie kontaktieren',
     'form_title' => 'Füllen Sie das Formular aus',

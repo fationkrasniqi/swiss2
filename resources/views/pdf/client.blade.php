@@ -38,7 +38,6 @@
         <table>
             <tr><td>Canton</td><td>{{ $client->canton }}</td></tr>
             <tr><td>Services</td><td>{{ $client->services }}</td></tr>
-            <tr><td>Hours</td><td>{{ $client->hours }}</td></tr>
             @if($client->service_date)
             <tr><td>Service Date</td><td>{{ $client->service_date->format('d.m.Y') }}</td></tr>
             @endif
@@ -46,9 +45,6 @@
         </table>
     </div>
 
-    <div class="total">
-        Total: CHF {{ number_format($client->total_price, 2, '.', "'") }}
-    </div>
 
     <div class="footer">
         <p>Janira Care &mdash; janiracare.ch</p>

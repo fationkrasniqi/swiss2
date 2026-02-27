@@ -1,6 +1,18 @@
 <?php
 
 return [
+    // Titujt dhe opsionet e reja të shërbimeve
+    'bodycare' => 'Kujdesi personal',
+    'nutrition' => 'Ushqyerja',
+    'excretion' => 'Nevojat fiziologjike',
+    'mobility' => 'Lëvizshmëria',
+    'service_bodycare_shower' => 'Ndihmë në larjen dhe kujdesin e përditshëm',
+    'service_bodycare_mouth' => 'Kujdes për dhëmbët dhe flokët',
+    'service_bodycare_dress' => 'Ndihmë në veshje dhe zhveshje, përfshirë çorapet kompresive',
+    'service_nutrition_eating' => 'Mbështetje gjatë ngrënies dhe marrjes së lëngjeve',
+    'service_excretion_toilet' => 'Ndihmë gjatë përdorimit të tualetit dhe menaxhimit të inkontinencës',
+    'service_mobility_move' => 'Ndihmë për t’u ngritur, shtrirë dhe për të ecur',
+    'service_mobility_position' => 'Pozicionim dhe ushtrime për parandalimin e plagëve nga presioni',
     'page_title' => 'Shërbimet për klientët',
     'page_subtitle' => 'Zgjidhni shërbimet që ju duhen dhe ne do t\'ju kontaktojmë',
     'form_title' => 'Plotesoni formularin',
