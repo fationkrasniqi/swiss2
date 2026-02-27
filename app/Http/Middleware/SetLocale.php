@@ -13,7 +13,7 @@ class SetLocale
     public function handle(Request $request, Closure $next): Response
     {
         $supported = ['en', 'de', 'sq', 'fr'];
-        $locale = Session::get('locale', 'sq');
+        $locale = Session::get('locale', 'de');
 
         if (in_array($locale, $supported)) {
             App::setLocale($locale);

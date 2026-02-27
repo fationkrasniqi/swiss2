@@ -68,12 +68,48 @@
                     {{-- Services --}}
                     <div>
                         <label class="mb-2 block text-sm font-medium text-gray-700">{{ __('services.services') }}</label>
-                        <div class="grid gap-2 sm:grid-cols-2">
+                        <div class="grid gap-4 md:grid-cols-2">
+                            <!-- Dropdowns të ndara sipas kërkesës së klientit -->
+                            <div class="rounded-lg border border-blue-300 p-4 bg-blue-50 flex flex-col gap-2">
+                                <label class="mb-2 font-semibold text-blue-900">Körperpflege</label>
+                                <select name="korperpflege_dropdown_demo" class="rounded-lg border border-gray-300 px-4 py-2.5 text-sm focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 focus:outline-none">
+                                    <option value="">-- Bitte wählen --</option>
+                                    <option value="Unterstützung bei der täglichen Körperpflege (Duschen, Waschen, Intimpflege)">Unterstützung bei der täglichen Körperpflege (Duschen, Waschen, Intimpflege)</option>
+                                    <option value="Mund- und Zahnpflege sowie Haarpflege">Mund- und Zahnpflege sowie Haarpflege</option>
+                                    <option value="Hilfe beim An- und Auskleiden inkl. Kompressionsstrümpfe">Hilfe beim An- und Auskleiden inkl. Kompressionsstrümpfe</option>
+                                </select>
+                            </div>
+                            <div class="rounded-lg border border-blue-300 p-4 bg-blue-50 flex flex-col gap-2">
+                                <label class="mb-2 font-semibold text-blue-900">Ernährung</label>
+                                <label class="flex items-start gap-2 cursor-pointer w-full">
+                                    <input type="checkbox" value="Unterstützung bei der Nahrungs- und Flüssigkeitsaufnahme" x-model="selectedServices" class="mt-1 rounded border-gray-300 text-teal-600 focus:ring-teal-500">
+                                    <span class="text-gray-700 text-sm">Unterstützung bei der Nahrungs- und Flüssigkeitsaufnahme</span>
+                                </label>
+                            </div>
+                            <div class="rounded-lg border border-blue-300 p-4 bg-blue-50 flex flex-col gap-2">
+                                <label class="mb-2 font-semibold text-blue-900">Ausscheidung</label>
+                                <label class="flex items-start gap-2 cursor-pointer w-full">
+                                    <input type="checkbox" value="Hilfe beim Toilettengang und beim Umgang mit Inkontinenzmaterial" x-model="selectedServices" class="mt-1 rounded border-gray-300 text-teal-600 focus:ring-teal-500">
+                                    <span class="text-gray-700 text-sm">Hilfe beim Toilettengang und beim Umgang mit Inkontinenzmaterial</span>
+                                </label>
+                            </div>
+                            <div class="rounded-lg border border-blue-300 p-4 bg-blue-50 flex flex-col gap-2">
+                                <label class="mb-2 font-semibold text-blue-900">Mobilität</label>
+                                <select name="mobilitat_dropdown_demo" class="rounded-lg border border-gray-300 px-4 py-2.5 text-sm focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 focus:outline-none">
+                                    <option value="">-- Bitte wählen --</option>
+                                    <option value="Unterstützung beim Aufstehen, Hinlegen und Gehen">Unterstützung beim Aufstehen, Hinlegen und Gehen</option>
+                                    <option value="Bewegungsförderung und Lagerung zur Vorbeugung von Druckstellen">Bewegungsförderung und Lagerung zur Vorbeugung von Druckstellen</option>
+                                </select>
+                            </div>
+                            <!-- Extra Dienstleistungen të grupuara bukur -->
+                            <!-- Checkbox-et ekzistuese të shërbimeve të tjera -->
                             @foreach($serviceKeys as $key)
-                            <label class="flex items-center gap-2 rounded-lg border border-gray-200 p-3 text-sm transition hover:border-teal-300 hover:bg-teal-50 cursor-pointer">
-                                <input type="checkbox" value="{{ __('services.service_' . $key) }}" x-model="selectedServices" class="rounded border-gray-300 text-teal-600 focus:ring-teal-500">
-                                <span>{{ __('services.service_' . $key) }}</span>
-                            </label>
+                            <div class="rounded-lg border border-gray-200 p-4 bg-white flex items-center gap-2">
+                                <label class="flex items-center gap-2 cursor-pointer w-full">
+                                    <input type="checkbox" value="{{ __('services.service_' . $key) }}" x-model="selectedServices" class="rounded border-gray-300 text-teal-600 focus:ring-teal-500">
+                                    <span>{{ __('services.service_' . $key) }}</span>
+                                </label>
+                            </div>
                             @endforeach
                         </div>
                         <input type="hidden" name="services" :value="selectedServices.join(', ')">
