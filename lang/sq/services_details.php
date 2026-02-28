@@ -2,7 +2,7 @@
 
 return [
     'page_title' => 'Kujdesi ynë',
-    'page_subtitle' => 'Nga kujdesi bazë te shërbimet shtesë — individuale, njerëzore, profesionale.',
+    'page_subtitle' => 'Nga kujdesi bazë te shërbimet shtesë — individuale, njerëzore dhe profesionale.',
     'footer_note' => 'Shkurt: ju kujdeseni — ne ju shoqërojmë. E thjeshtë, e sigurt dhe personale.',
     'extra_1_title' => 'Saktësi & Besim',
     'extra_1_text' => 'Çdo plan kujdesi dokumentohet qartë dhe rishikohet rregullisht për cilësi të qëndrueshme.',
@@ -14,7 +14,7 @@ return [
         [
             'title' => 'Kujdes bazë / Shërbime themelore',
             'items' => [
-                'Ndihmë me larje, dush, banjë',
+                'Ndihmë me larje, dush dhe banjë',
                 'Veshje dhe zhveshje',
                 'Mbështetje në të ngrënë dhe të pirë',
                 'Mobilizim & lëvizje',
@@ -42,7 +42,7 @@ return [
             ],
         ],
         [
-            'title' => 'Shtëpiake & ndihmë në përditshmëri',
+            'title' => 'Shërbimet shtëpiake & ndihmë në përditshmëri',
             'items' => [
                 'Blerje ose shoqërim në termine mjekësore',
                 'Gatim & përgatitje vaktesh',

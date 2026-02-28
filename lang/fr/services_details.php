@@ -2,7 +2,7 @@
 
 return [
     'page_title' => 'Nos soins',
-    'page_subtitle' => 'Des soins de base aux prestations complémentaires — individuels, humains, professionnels.',
+    'page_subtitle' => 'Des soins de base aux prestations complémentaires — individuels, humains et professionnels.',
     'footer_note' => 'En bref : vous prenez soin — nous vous accompagnons. Simple, sûr et personnel.',
     'extra_1_title' => 'Précision & confiance',
     'extra_1_text' => 'Chaque plan de soins est documenté clairement et revu régulièrement pour une qualité constante.',
@@ -14,7 +14,7 @@ return [
         [
             'title' => 'Soins de base / Prestations essentielles',
             'items' => [
-                'Aide à la toilette, douche, bain',
+                'Aide à la toilette, douche et bain',
                 'Habillage et déshabillage',
                 'Aide à l\'alimentation et à l\'hydratation',
                 'Mobilisation & mouvement',

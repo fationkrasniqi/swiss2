@@ -49,7 +49,7 @@ return [
     'step_8_description' => 'Kontroll i rregullt dhe përshtatje kur është e nevojshme.',
     
     'services_title' => 'Shërbimet Tona',
-    'services_subtitle' => 'Ofrojmë një gamë të gjerë shërbimesh të personalizuara për kujdesin e të moshuarve',
+    'services_subtitle' => 'Ofrojmë një gamë të gjerë shërbimesh të personalizuara për kujdesin ndaj të moshuarve, si dhe përkujdesje dhe mbështetje për personat me aftësi të kufizuara',
     
     'filter_all' => 'Të Gjitha',
     'filter_care' => 'Kujdesi',
@@ -163,7 +163,7 @@ return [
     'story_2_text' => 'Ekipi ynë përbëhet nga profesionistë të kujdesit me përvojë, që e kanë marrë si mision të mbështesin familjet në përditshmëri. Jemi të afërt, të besueshëm dhe gjithmonë pranë jush. Secili prej nesh sjell dijen profesionale, përvojën dhe mbi të gjitha zemrën në kujdes.',
     'story_2_image_alt' => 'Baza jonë profesionale',
     'story_3_title' => 'Pse Ne',
-    'story_3_text' => 'Ne bashkojmë dijen profesionale me përkujdesjen personale, që kujdesi në shtëpi të funksionojë. Të afërmit udhëhiqen hap pas hapi dhe marrin sigurinë që u nevojitet – ne jemi partneri i tyre i besueshëm në përditshmëri.',
+    'story_3_text' => 'Ne bashkojmë njohuritë profesionale me përkujdesjen personale, që kujdesi në shtëpi të funksionojë. Të afërmit udhëhiqen hap pas hapi dhe marrin sigurinë që u nevojitet – ne jemi partneri i tyre i besueshëm në përditshmëri.',
     'story_3_image_alt' => 'Rritja me qëllim',
     'mission_title' => 'Misioni Ynë Sot',
     'mission_text' => 'Ne jemi të përkushtuar për të ofruar kujdes të dhembshur dhe profesional për të moshuarit në të gjithë Zvicrën. Çdo ditë, ekipi ynë punon për të siguruar që të moshuarit të marrin dinjitetin, vëmendjen dhe mbështetjen cilësore që meritojnë në shtëpitë e tyre.',

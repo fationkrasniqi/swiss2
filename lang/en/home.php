@@ -49,7 +49,7 @@ return [
     'step_8_description' => 'Regular checks and adjustments when needed.',
     
     'services_title' => 'Our Services',
-    'services_subtitle' => 'We offer a wide range of personalized services for elderly care',
+    'services_subtitle' => 'We offer a wide range of personalized services for elderly care, as well as dedicated support and assistance for individuals with disabilities',
     
     'filter_all' => 'All',
     'filter_care' => 'Care',

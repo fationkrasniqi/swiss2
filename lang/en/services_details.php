@@ -2,7 +2,7 @@
 
 return [
     'page_title' => 'Our Care',
-    'page_subtitle' => 'From basic care to additional services — individual, human, professional.',
+    'page_subtitle' => 'From basic care to additional services — individual, human and professional.',
     'footer_note' => 'In short: you care — we accompany. Simple, safe, and personal.',
     'extra_1_title' => 'Precision & Trust',
     'extra_1_text' => 'Every care plan is clearly documented and reviewed regularly for consistent quality.',
@@ -14,7 +14,7 @@ return [
         [
             'title' => 'Basic Care / Core Services',
             'items' => [
-                'Help with washing, showering, bathing',
+                'Help with washing, showering and bathing',
                 'Getting dressed and undressed',
                 'Support with eating and drinking',
                 'Mobilisation & movement',

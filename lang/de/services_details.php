@@ -2,7 +2,7 @@
 
 return [
     'page_title' => 'Unsere Pflege',
-    'page_subtitle' => 'Grundpflege bis Zusatzleistungen – individuell, menschlich, professionell.',
+    'page_subtitle' => 'Grundpflege bis Zusatzleistungen – individuell, menschlich und professionell.',
     'footer_note' => 'Kurz gesagt: Sie pflegen – wir begleiten. Einfach, sicher und persönlich.',
     'extra_1_title' => 'Präzision & Vertrauen',
     'extra_1_text' => 'Jeder Pflegeplan wird klar dokumentiert und regelmäßig überprüft – für gleichbleibende Qualität.',
@@ -14,7 +14,7 @@ return [
         [
             'title' => 'Grundpflege / Basisleistungen',
             'items' => [
-                'Hilfe beim Waschen, Duschen, Baden',
+                'Hilfe beim Waschen, Duschen und Baden',
                 'An- und Ausziehen',
                 'Unterstützung beim Essen und Trinken',
                 'Mobilisation & Bewegung',

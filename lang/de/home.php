@@ -49,7 +49,7 @@ return [
     'step_8_description' => 'Regelmäßige Kontrolle und Anpassung bei Bedarf.',
     
     'services_title' => 'Unsere Dienstleistungen',
-    'services_subtitle' => 'Wir bieten eine breite Palette personalisierter Dienstleistungen für die Altenpflege',
+    'services_subtitle' => 'Wir bieten eine breite Palette personalisierter Dienstleistungen in der Altenpflege sowie in der Betreuung und Unterstützung von Menschen mit Beeinträchtigung an',
     
     'filter_all' => 'Alle',
     'filter_care' => 'Pflege',
@@ -162,9 +162,9 @@ return [
     'story_2_title' => 'Unser Fundament',
     'story_2_text' => 'Von Anfang an haben wir uns darauf konzentriert, nur qualifizierte, zertifizierte Krankenschwestern und Pflegekräfte einzustellen, die unser Engagement für Würde und Respekt teilen. Jedes Teammitglied wird sorgfältig ausgewählt und geschult, um die Schweizer Gesundheitsstandards zu erfüllen. Wir sind vielleicht ein neues Unternehmen, aber unser Ansatz basiert auf bewährten professionellen Praktiken und echter menschlicher Verbindung.',
     'story_2_image_alt' => 'Unser professionelles Fundament',
-    'story_3_title' => 'Mit Ziel Wachsen',
+    'story_3_title' => 'Gezielt Wachsen',
     'story_3_text' => 'Während wir wachsen, bleibt unsere Mission unverändert: zuverlässige, personalisierte Pflege zu bieten, die es Senioren ermöglicht, ihre Unabhängigkeit und Lebensqualität zu erhalten. Wir hören Familien zu, passen uns individuellen Bedürfnissen an und bauen dauerhafte Beziehungen auf, die auf Vertrauen basieren. Jeder Patient, den wir betreuen, stärkt unser Engagement für Exzellenz in der häuslichen Krankenpflege.',
-    'story_3_image_alt' => 'Mit Ziel wachsen',
+    'story_3_image_alt' => 'Gezielt wachsen',
     'mission_title' => 'Unsere Mission Heute',
     'mission_text' => 'Wir sind der mitfühlenden, professionellen Altenpflege in der gesamten Schweiz verpflichtet. Jeden Tag arbeitet unser Team daran, sicherzustellen, dass Senioren die Würde, Aufmerksamkeit und qualitativ hochwertige Unterstützung erhalten, die sie in ihren eigenen vier Wänden verdienen.',
     'view_more' => 'Mehr anzeigen',

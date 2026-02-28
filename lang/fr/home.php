@@ -33,7 +33,7 @@ return [
     'step_8_description' => 'Contrôle régulier et ajustements si nécessaire.',
     
     'services_title' => 'Nos Services',
-    'services_subtitle' => 'Nous offrons une large gamme de services personnalisés pour les soins aux personnes âgées',
+    'services_subtitle' => 'Nous offrons une large gamme de services personnalisés pour les soins aux personnes âgées, ainsi que des services d’accompagnement et de soutien destinés aux personnes en situation de handicap',
     
     'filter_all' => 'Tous',
     'filter_care' => 'Soins',
