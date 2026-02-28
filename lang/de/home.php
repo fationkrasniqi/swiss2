@@ -167,4 +167,5 @@ return [
     'story_3_image_alt' => 'Mit Ziel wachsen',
     'mission_title' => 'Unsere Mission Heute',
     'mission_text' => 'Wir sind der mitfühlenden, professionellen Altenpflege in der gesamten Schweiz verpflichtet. Jeden Tag arbeitet unser Team daran, sicherzustellen, dass Senioren die Würde, Aufmerksamkeit und qualitativ hochwertige Unterstützung erhalten, die sie in ihren eigenen vier Wänden verdienen.',
+    'view_more' => 'Mehr anzeigen',
 ];

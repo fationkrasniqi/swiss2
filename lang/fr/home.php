@@ -151,4 +151,5 @@ return [
     'story_3_image_alt' => 'Grandir avec un but',
     'mission_title' => 'Notre Mission Aujourd\'hui',
     'mission_text' => 'Nous sommes dédiés à fournir des soins aux personnes âgées compassionnels et professionnels dans toute la Suisse. Chaque jour, notre équipe travaille pour s\'assurer que les seniors reçoivent la dignité, l\'attention et le soutien de qualité qu\'ils méritent dans leur propre domicile.',
+    'view_more' => 'Voir plus',
 ];

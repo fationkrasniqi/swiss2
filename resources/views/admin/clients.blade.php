@@ -13,7 +13,7 @@
                         <th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">Phone</th>
                         <th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">Canton</th>
                         <th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">Services</th>
-                        <th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">Total</th>
+                        <!-- <th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">Total</th> -->
                         <th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">Date</th>
                         <th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">Actions</th>
                     </tr>
@@ -25,8 +25,34 @@
                         <td class="whitespace-nowrap px-4 py-3 text-sm text-gray-600">{{ $client->email }}</td>
                         <td class="whitespace-nowrap px-4 py-3 text-sm text-gray-600">{{ $client->full_phone }}</td>
                         <td class="whitespace-nowrap px-4 py-3 text-sm text-gray-600">{{ $client->canton }}</td>
-                        <td class="max-w-xs truncate px-4 py-3 text-sm text-gray-600" title="{{ $client->services }}">{{ $client->services }}</td>
-                        <td class="whitespace-nowrap px-4 py-3 text-sm font-semibold text-teal-700">CHF {{ $client->total_price }}</td>
+                        <td class="max-w-xs px-4 py-3 text-sm text-gray-600" style="max-width:320px; white-space:pre-line; word-break:break-word; overflow:auto;">
+                            @php
+                                $serviceKeys = [];
+                                // Nëse është array, përdor direkt, nëse është tekst, ndaje me presje ose newline
+                                if (is_array(json_decode($client->services, true))) {
+                                    $serviceKeys = json_decode($client->services, true);
+                                } else {
+                                    // Largo çdo tekst që nuk është çelës (p.sh. nëse është tekst i përkthyer nga forma)
+                                    $raw = $client->services;
+                                    // Mund të jetë një ose më shumë çelësa të ndarë me presje ose newline
+                                    foreach (preg_split('/[\n,]+/', $raw) as $item) {
+                                        $item = trim($item);
+                                        // Vetëm nëse fillon me 'service_' ose 'bodycare' etj, e shtojmë si çelës
+                                        if (Str::startsWith($item, ['service_', 'bodycare', 'nutrition', 'excretion', 'mobility'])) {
+                                            $serviceKeys[] = $item;
+                                        }
+                                    }
+                                }
+                            @endphp
+                            @if(count($serviceKeys))
+                                @foreach($serviceKeys as $key)
+                                    <div>{{ __('services.' . trim($key), [], 'de') }}</div>
+                                @endforeach
+                            @else
+                                <div>{{ $client->services }}</div>
+                            @endif
+                        </td>
+                        <!-- <td class="whitespace-nowrap px-4 py-3 text-sm font-semibold text-teal-700">CHF {{ $client->total_price }}</td> -->
                         <td class="whitespace-nowrap px-4 py-3 text-sm text-gray-500">{{ $client->created_at->format('d.m.Y') }}</td>
                         <td class="whitespace-nowrap px-4 py-3 text-sm">
                             <div class="flex gap-2">

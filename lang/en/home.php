@@ -167,4 +167,5 @@ return [
     'story_3_image_alt' => 'Growing with purpose',
     'mission_title' => 'Our Mission Today',
     'mission_text' => 'We are dedicated to delivering compassionate, professional elderly care throughout Switzerland. Every day, our team works to ensure that seniors receive the dignity, attention, and quality support they deserve in their own homes.',
+    'view_more' => 'View more',
 ];

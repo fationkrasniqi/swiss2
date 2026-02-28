@@ -101,7 +101,7 @@ return [
     
     'seo_title' => 'Janira Care | Kujdesi për Pleq Zvicër | Shërbim Profesional 24/7 | Higjienë & Shëndët',
     'seo_description' => 'Kujdes profesional për pleqtë dhe mbeshtetje mjekësore në Zvicër. 15 vjet eksperiencë, 850+ pleq të lumtur. Kujdes higjenik, asistencë mjekësore, ndihmë e përditshmem.',
-    'seo_keywords' => 'kujdesi për pleq, mbeshtetje mjekësore, kujdes higjenik, kujdes në shtepi, shërbim 24/7, Zvicër',
+    'seo_keywords' => 'kujdesi për pleq, mbeshtetje mjekësore, kujdes higjenik, kujdes në shtëpi, shërbim 24/7, Zvicër',
     
     'stat_happy_seniors' => 'Pleq të Lumtur',
     'stat_years_experience' => 'Vite Eksperiencë',
@@ -118,7 +118,7 @@ return [
     'team_role_1' => 'Mjeke Kryesore & Themeluese',
     'team_bio_1' => '20 vjet eksperiencë në kujdesin për pleqtë. E specializuar në geriatri dhe mbeshtetje mjekësore.',
     'team_role_2' => 'Kujdestar Kryesor',
-    'team_bio_2' => '15 vjet në kujdesin në shtepi. Ekspert për ndihmë të përditshmem dhe mobilitet.',
+    'team_bio_2' => '15 vjet në kujdesin në shtëpi. Ekspert për ndihmë të përditshmem dhe mobilitet.',
     'team_role_3' => 'Specialiste e Higjienës',
     'team_bio_3' => '10 vjet eksperiencë në kujdesin higjenik. E certifikuar në higjienë mjekësore dhe kujdes të plageve.',
     'team_role_4' => 'Asistent Mjekësor',
@@ -167,4 +167,5 @@ return [
     'story_3_image_alt' => 'Rritja me qëllim',
     'mission_title' => 'Misioni Ynë Sot',
     'mission_text' => 'Ne jemi të përkushtuar për të ofruar kujdes të dhembshur dhe profesional për të moshuarit në të gjithë Zvicrën. Çdo ditë, ekipi ynë punon për të siguruar që të moshuarit të marrin dinjitetin, vëmendjen dhe mbështetjen cilësore që meritojnë në shtëpitë e tyre.',
+    'view_more' => 'Shiko më shumë',
 ];

@@ -1,0 +1,23 @@
+<?php
+return [
+    'title' => 'Care for Relatives',
+    'desc' => 'Care for relatives means that family members care for their loved ones at home and are not alone. We show step by step how care works, support in everyday life, and are there when questions or uncertainties arise.',
+    'subtitle' => 'How care for relatives works',
+    'summary' => 'In short: You care – we support. Simple, safe, and personal.',
+    'step1_title' => 'Contact',
+    'step1_desc' => 'You contact us – by phone, email, or our contact form.',
+    'step2_title' => 'Initial Interview',
+    'step2_desc' => 'We get to know the person in need of care and the relatives.',
+    'step3_title' => 'Consultation',
+    'step3_desc' => 'Together we clarify your situation and what support makes sense.',
+    'step4_title' => 'Planning',
+    'step4_desc' => 'Step-by-step instructions and clear next steps for care.',
+    'step5_title' => 'Support',
+    'step5_desc' => 'We are regularly on site and accompany the care.',
+    'step6_title' => 'Assistance',
+    'step6_desc' => 'Tips, answers, and support always available.',
+    'step7_title' => 'Relief',
+    'step7_desc' => 'Security and relief in everyday life for relatives.',
+    'step8_title' => 'Control & Adjustment',
+    'step8_desc' => 'Regular control and adjustment as needed.',
+];

@@ -66,10 +66,6 @@
                         ['icon' => 'fa-calendar-check', 'key' => 2],
                         ['icon' => 'fa-bell',           'key' => 3],
                         ['icon' => 'fa-user-doctor',    'key' => 4],
-                        ['icon' => 'fa-hands-helping',  'key' => 5],
-                        ['icon' => 'fa-comments',       'key' => 6],
-                        ['icon' => 'fa-shield-heart',   'key' => 7],
-                        ['icon' => 'fa-sliders',        'key' => 8],
                     ];
                 @endphp
 
@@ -85,6 +81,11 @@
                         <p class="text-[0.9rem] leading-normal text-gray-500">{{ __('home.step_' . $step['key'] . '_description') }}</p>
                     </div>
                 @endforeach
+            </div>
+            <div class="flex justify-center mt-8">
+                <a href="{{ url('/angehoerigenpflege') }}" class="inline-block rounded-full bg-brand-pink px-8 py-3 text-white font-semibold text-lg shadow hover:bg-brand-pink/90 transition">
+                    {{ __('home.view_more') }}
+                </a>
             </div>
         </div>
     </section>

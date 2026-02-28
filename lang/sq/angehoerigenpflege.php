@@ -1,0 +1,23 @@
+<?php
+return [
+    'title' => 'Kujdesi për të afërmit',
+    'desc' => 'Kujdesi për të afërmit do të thotë që anëtarët e familjes kujdesen për të dashurit e tyre në shtëpi dhe nuk janë vetëm. Ne tregojmë hap pas hapi si funksionon kujdesi, mbështesim në përditshmëri dhe jemi aty kur ka pyetje ose pasiguri.',
+    'subtitle' => 'Si funksionon kujdesi për të afërmit',
+    'summary' => 'Shkurt: Ju kujdeseni – ne ju mbështesim. Thjeshtë, sigurt dhe personalisht.',
+    'step1_title' => 'Kontakti',
+    'step1_desc' => 'Ju na kontaktoni – me telefon, email ose formularin tonë të kontaktit.',
+    'step2_title' => 'Takimi i parë',
+    'step2_desc' => 'Ne njihemi me personin që ka nevojë për kujdes dhe me të afërmit.',
+    'step3_title' => 'Këshillimi',
+    'step3_desc' => 'Së bashku sqarojmë situatën tuaj dhe çfarë mbështetjeje është e përshtatshme.',
+    'step4_title' => 'Planifikimi',
+    'step4_desc' => 'Udhëzime hap pas hapi dhe hapa të qartë për kujdesin.',
+    'step5_title' => 'Mbështetja',
+    'step5_desc' => 'Ne jemi rregullisht pranë jush dhe ju mbështesim gjatë kujdesit.',
+    'step6_title' => 'Asistenca',
+    'step6_desc' => 'Këshilla, përgjigje dhe ndihmë gjithmonë të disponueshme.',
+    'step7_title' => 'Lehtësimi',
+    'step7_desc' => 'Siguri dhe lehtësim në përditshmëri për të afërmit.',
+    'step8_title' => 'Kontroll & Përshtatje',
+    'step8_desc' => 'Kontroll i rregullt dhe përshtatje sipas nevojës.',
+];

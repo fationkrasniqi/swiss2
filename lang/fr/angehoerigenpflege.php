@@ -1,0 +1,23 @@
+<?php
+return [
+    'title' => 'Soins aux proches',
+    'desc' => 'Les soins aux proches signifient que les membres de la famille prennent soin de leurs proches à la maison et ne sont pas seuls. Nous montrons étape par étape comment fonctionne le soin, soutenons au quotidien et sommes là en cas de questions ou d’incertitudes.',
+    'subtitle' => 'Comment fonctionnent les soins aux proches',
+    'summary' => 'En bref : Vous soignez – nous accompagnons. Simple, sûr et personnel.',
+    'step1_title' => 'Contact',
+    'step1_desc' => 'Vous nous contactez – par téléphone, e-mail ou via notre formulaire de contact.',
+    'step2_title' => 'Premier entretien',
+    'step2_desc' => 'Nous faisons connaissance avec la personne à soigner et les proches.',
+    'step3_title' => 'Conseil',
+    'step3_desc' => 'Nous clarifions ensemble votre situation et le soutien utile.',
+    'step4_title' => 'Planification',
+    'step4_desc' => 'Instructions étape par étape et prochaines étapes claires pour les soins.',
+    'step5_title' => 'Accompagnement',
+    'step5_desc' => 'Nous sommes régulièrement sur place et accompagnons les soins.',
+    'step6_title' => 'Assistance',
+    'step6_desc' => 'Conseils, réponses et assistance toujours disponibles.',
+    'step7_title' => 'Soulagement',
+    'step7_desc' => 'Sécurité et soulagement au quotidien pour les proches.',
+    'step8_title' => 'Contrôle & Ajustement',
+    'step8_desc' => 'Contrôle régulier et ajustement si nécessaire.',
+];

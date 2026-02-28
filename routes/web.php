@@ -31,12 +31,9 @@ Route::get('/lang/{locale}', function (string $locale) {
 // API: Canton prices
 Route::get('/api/cantons/prices', [CantonController::class, 'getPrices'])->name('api.cantons.prices');
 
-// Route for the page /angehoerigenpflege with language-specific views
+// Route for the page /angehoerigenpflege with single Blade view and lang translations
 Route::get('/angehoerigenpflege', function () {
-    $locale = session('locale', app()->getLocale());
-    $supported = ['de', 'en', 'fr', 'sq'];
-    $view = 'angehoerigenpflege.' . (in_array($locale, $supported) ? $locale : 'de');
-    return view($view);
+    return view('angehoerigenpflege');
 });
 
 /*
