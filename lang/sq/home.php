@@ -25,7 +25,7 @@ return [
     'nav_contact' => 'Kontakti',
     
     'hero_title' => 'Kur kujdesi bëhet familje – Mbështetje në shtëpi',
-    'hero_subtitle' => 'Ne i mbështesim dhe i shoqërojmë familjarët në kujdesin për të dashurit e tyre. Me dije profesionale, udhëzim të qartë dhe përkujdesje personale, sjellim siguri, lehtësim dhe cilësi të kujdesit në shtëpi.',
+    'hero_subtitle' => 'Ne i mbështesim dhe i shoqërojmë familjarët në kujdesin për të dashurit e tyre. Me njohuri profesionale, udhëzim të qartë dhe përkujdesje personale, sjellim siguri, lehtësim dhe cilësi të kujdesit në shtëpi.',
     'hero_cta' => 'Kontaktoni Tani',
     
     'how_it_works_aria' => 'Si funksionon kujdesi për të afërmit',
@@ -85,8 +85,8 @@ return [
     'contact_email_label' => 'E-mail',
     'contact_address' => 'Adresa',
     'contact_hours' => 'Orari i punës',
-    'contact_hours_weekdays' => 'Hën-Pre: 08:00 - 18:00',
-    'contact_hours_weekend' => 'Sht-Die: 10:00 - 16:00',
+    'contact_hours_weekdays' => 'Hën-Pre: 08:00 - 17:00',
+    // 'contact_hours_weekend' => '',
     'contact_follow_us' => 'Na ndiqni',
     'contact_form_title' => 'Dërgoni një mesazh',
     'contact_form_subtitle' => 'Plotësoni formularin dhe ne do t\'ju përgjigjemi sa më shpejt',

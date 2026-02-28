@@ -428,7 +428,7 @@
                             </div>
                             <div>
                                 <h4 class="mb-0.5 text-[14px] font-semibold text-gray-800">{{ __('home.contact_address') }}</h4>
-                                <p class="m-0 text-[13px] leading-[1.5] text-gray-500">Bahnhofstrasse 123<br>8001 Zürich, Schweiz</p>
+                                <a href="https://www.google.com/maps/place/Lerchentalstrasse+2B,+9016+St.+Gallen,+Switzerland/@47.437,9.396,17z" target="_blank" rel="noopener" class="m-0 text-[13px] leading-[1.5] text-gray-500 hover:text-brand-blue underline">Lerchentalstrasse 2B, 9016 St. Gallen</a>
                             </div>
                         </div>
 
@@ -439,7 +439,7 @@
                             </div>
                             <div>
                                 <h4 class="mb-0.5 text-[14px] font-semibold text-gray-800">{{ __('home.contact_hours') }}</h4>
-                                <p class="m-0 text-[13px] leading-[1.5] text-gray-500">{{ __('home.contact_hours_weekdays') }}<br>{{ __('home.contact_hours_weekend') }}</p>
+                                <p class="m-0 text-[13px] leading-[1.5] text-gray-500">{{ __('home.contact_hours_weekdays') }}</p>
                             </div>
                         </div>
                     </div>

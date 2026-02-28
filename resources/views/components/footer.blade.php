@@ -28,7 +28,7 @@
                     </li>
                     <li class="flex items-center gap-3">
                         <i class="fa-solid fa-location-dot w-5 text-center text-brand-pink"></i>
-                        <span>Zürich, Schweiz</span>
+                        <a href="https://www.google.com/maps/place/Lerchentalstrasse+2B,+9016+St.+Gallen,+Switzerland/@47.437,9.396,17z" target="_blank" rel="noopener" class="hover:text-brand-pink underline">Lerchentalstrasse 2B, 9016 St. Gallen</a>
                     </li>
                     <li class="flex items-center gap-3">
                         <i class="fa-solid fa-clock w-5 text-center text-brand-pink"></i>
