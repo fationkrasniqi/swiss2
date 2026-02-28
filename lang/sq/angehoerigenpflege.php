@@ -9,7 +9,7 @@ return [
     'step2_title' => 'Takimi i parë',
     'step2_desc' => 'Ne njihemi me personin që ka nevojë për kujdes dhe me të afërmit.',
     'step3_title' => 'Këshillimi',
-    'step3_desc' => 'Së bashku sqarojmë situatën tuaj dhe çfarë mbështetjeje është e përshtatshme.',
+    'step3_desc' => 'Së bashku sqarojmë situatën dhe çfarë mbështetje nevojitet.',
     'step4_title' => 'Planifikimi',
     'step4_desc' => 'Udhëzime hap pas hapi dhe hapa të qartë për kujdesin.',
     'step5_title' => 'Mbështetja',
