@@ -19,8 +19,8 @@ return [
     'summary_adjust_desc' => 'Regelmässige Kontrolle und Optimierung',
     'nav_brand' => 'Altenpflege',
     'nav_home' => 'Startseite',
-    'nav_services' => 'Dienstleistungen',
-    'nav_services_details' => 'Unsere Pflege',
+    'nav_services' => 'Kontaktformular',
+    'nav_services_details' => 'Dienstleistungen',
     'nav_gallery' => 'Galerie',
     'nav_contact' => 'Kontakt',
     
@@ -111,7 +111,7 @@ return [
     'reviews_subtitle' => 'Was unsere Kunden über uns sagen',
     'review_1_text' => 'Ausgezeichnete Pflege für meine Mutter. Das Personal ist sehr professionell und liebevoll. Ich bin sehr zufrieden mit dem Service.',
     'review_2_text' => 'Die beste Entscheidung für die Pflege meines Vaters. Die Pflegekräfte sind sehr kompetent und freundlich. Sehr empfehlenswert!',
-    'review_3_text' => 'Hervorragender Service! Das Team kümmert sich wunderbar um meine Großmutter. Sie ist glücklich und gut versorgt.',
+    'review_3_text' => 'Anna M.: Ich bin beeindruckt von der Fürsorge und Aufmerksamkeit, die mein Großvater erhalten hat. Das Team ist immer freundlich und hilfsbereit.',
     
     'team_title' => 'Unser Team',
     'team_subtitle' => 'Professionelle und erfahrene Pflegekräfte',

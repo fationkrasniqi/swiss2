@@ -245,15 +245,15 @@
             </div>
 
             <div class="mt-[42px] grid gap-7" style="grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));">
-                @foreach(['post1', 'post2', 'post3'] as $img)
+                @foreach(['test1', 'test3', 'test2'] as $img)
                     <div @click="lightbox = true; current = '{{ asset('images/' . $img . '.webp') }}'"
                          class="group cursor-pointer overflow-hidden rounded-3xl border border-brand-blue/10 bg-brand-blue/[.03] shadow-sm transition-all duration-400 hover:-translate-y-1 hover:shadow-lg"
-                         style="height: 420px;">
+                         style="height: 500px;">
                         <picture>
                             <source srcset="{{ asset('images/' . $img . '.webp') }}" type="image/webp">
                             <img src="{{ asset('images/' . $img . '.webp') }}" alt="Elderly care gallery"
-                                 class="h-full w-full object-contain transition-transform duration-600 group-hover:scale-[1.04]"
-                                 loading="lazy" width="600" height="400">
+                                 class="h-full w-full object-cover transition-transform duration-600 group-hover:scale-[1.04]"
+                                 loading="lazy" width="500" height="500">
                         </picture>
                     </div>
                 @endforeach
@@ -275,9 +275,8 @@
         reviews: [
             { name: 'Maria S.', initials: 'MS', text: `&quot;{{ __('home.review_1_text') }}&quot;` },
             { name: 'Thomas M.', initials: 'TM', text: `&quot;{{ __('home.review_2_text') }}&quot;` },
-            { name: 'Sophie D.', initials: 'SD', text: `&quot;{{ __('home.review_3_text') }}&quot;` }
-        ],
-        init() { setInterval(() => this.current = (this.current + 1) % this.reviews.length, 7000) }
+            { name: 'Anna M.', initials: 'AM', text: `&quot;{{ __('home.review_3_text') }}&quot;` }
+        ]
     }">
         <div class="mx-auto max-w-[1200px]">
             <div class="mb-[50px] text-center">
@@ -288,25 +287,18 @@
             <div class="relative mx-auto max-w-[900px]">
                 {{-- Slides --}}
                 <div class="relative min-h-[320px] overflow-hidden">
-                    <template x-for="(review, i) in reviews" :key="i">
-                        <div x-show="current === i"
-                             x-transition:enter="transition ease-out duration-700"
-                             x-transition:enter-start="opacity-0 translate-x-[60px]"
-                             x-transition:enter-end="opacity-100 translate-x-0"
-                             class="absolute inset-0 w-full" style="pointer-events: none;"
-                             :style="current === i ? 'pointer-events: auto;' : ''">
-                            <div class="mx-auto max-w-[680px] rounded-[28px] border border-brand-pink/10 bg-white p-[42px] shadow-md transition-all duration-500 hover:-translate-y-1 hover:shadow-lg hover:border-brand-pink">
-                                <div class="mb-5 flex items-center gap-4">
-                                    <div class="flex h-[60px] w-[60px] shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-brand-blue to-brand-pink text-[20px] font-bold text-white shadow-[0_4px_12px_rgba(18,72,126,0.15)]" x-text="review.initials"></div>
-                                    <div>
-                                        <h4 class="mb-1 text-base font-bold text-gray-800" x-text="review.name"></h4>
-                                        <div class="text-[18px] text-yellow-400">★★★★★</div>
-                                    </div>
+                    <div class="absolute inset-0 w-full">
+                        <div class="mx-auto max-w-[680px] rounded-[28px] border border-brand-pink/10 bg-white p-[42px] shadow-md transition-all duration-500 hover:-translate-y-1 hover:shadow-lg hover:border-brand-pink">
+                            <div class="mb-5 flex items-center gap-4">
+                                <div class="flex h-[60px] w-[60px] shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-brand-blue to-brand-pink text-[20px] font-bold text-white shadow-[0_4px_12px_rgba(18,72,126,0.15)]" x-text="reviews[current].initials"></div>
+                                <div>
+                                    <h4 class="mb-1 text-base font-bold text-gray-800" x-text="reviews[current].name"></h4>
+                                    <div class="text-[18px] text-yellow-400">★★★★★</div>
                                 </div>
-                                <p class="text-base italic leading-[1.8] text-gray-500" x-html="review.text"></p>
                             </div>
+                            <p class="text-base italic leading-[1.8] text-gray-500" x-html="reviews[current].text"></p>
                         </div>
-                    </template>
+                    </div>
                 </div>
 
                 {{-- Arrows --}}
@@ -428,7 +420,7 @@
                             </div>
                             <div>
                                 <h4 class="mb-0.5 text-[14px] font-semibold text-gray-800">{{ __('home.contact_address') }}</h4>
-                                <a href="https://www.google.com/maps/place/Lerchentalstrasse+2B,+9016+St.+Gallen,+Switzerland/@47.437,9.396,17z" target="_blank" rel="noopener" class="m-0 text-[13px] leading-[1.5] text-gray-500 hover:text-brand-blue underline">Lerchentalstrasse 2B, 9016 St. Gallen</a>
+                                <a href="https://www.google.com/maps/place/Janira+Care/@47.44105359927428,9.410949012100318,17z/data=!3m1!4b1!4m6!3m5!1s0x479b1fbaba0579bb:0x740426d604a3661f!8m2!3d47.44105!4d9.41095!16s%2Fg%2F11y5pyfwy9" target="_blank" rel="noopener" class="m-0 text-[13px] leading-[1.5] text-gray-500 hover:text-brand-blue underline">Lerchentalstrasse 2B, 9016 St. Gallen</a>
                             </div>
                         </div>
 

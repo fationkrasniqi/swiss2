@@ -72,25 +72,25 @@
             </div> -->
 
             {{-- Vetëm grid me pikat dhe ikonat në të majtë --}}
-            <div class="mt-10 flex flex-col gap-5">
+            <div class="mt-16 mb-16 max-w-5xl mx-auto px-4">
                 @php
                     $steps = [
-                        ['icon' => 'fa-search',         'key' => 1],
-                        ['icon' => 'fa-calendar-check', 'key' => 2],
-                        ['icon' => 'fa-bell',           'key' => 3],
-                        ['icon' => 'fa-user-doctor',    'key' => 4],
-                        ['icon' => 'fa-hands-helping',  'key' => 5],
-                        ['icon' => 'fa-sliders',        'key' => 8],
+                        ['icon' => 'fa-search',         'key' => 1, 'color' => 'blue'],
+                        ['icon' => 'fa-calendar-check', 'key' => 2, 'color' => 'pink'],
+                        ['icon' => 'fa-bell',           'key' => 3, 'color' => 'blue'],
+                        ['icon' => 'fa-user-doctor',    'key' => 4, 'color' => 'pink'],
+                        ['icon' => 'fa-hands-helping',  'key' => 5, 'color' => 'blue'],
+                        ['icon' => 'fa-sliders',        'key' => 8, 'color' => 'pink'],
                     ];
                 @endphp
                 @foreach($steps as $step)
-                    <div class="flex items-center gap-4 rounded-[15px] border-2 border-brand-blue/[.08] bg-transparent p-5 transition-all duration-300 hover:border-brand-pink hover:shadow-[0_8px_20px_rgba(255,0,128,0.08)]">
-                        <div class="flex h-[48px] w-[48px] items-center justify-center rounded-full bg-brand-pink text-white text-[1.5rem] font-bold shadow-[0_3px_10px_rgba(255,0,128,0.13)]">
+                    <div class="flex items-start gap-6 group transition-all duration-300 hover:translate-x-2 py-3 mb-4 border-b border-gray-100 last:border-0 last:mb-0">
+                        <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full {{ $step['color'] === 'blue' ? 'bg-brand-blue' : 'bg-brand-pink' }} text-white text-xl shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl">
                             <i class="fas {{ $step['icon'] }}"></i>
                         </div>
-                        <div>
-                            <div class="text-[1.08rem] font-semibold text-brand-blue">{{ __('angehoerigenpflege.step' . $step['key'] . '_title') }}</div>
-                            <div class="text-[0.95rem] leading-normal text-gray-500">{{ __('angehoerigenpflege.step' . $step['key'] . '_desc') }}</div>
+                        <div class="flex-1">
+                            <h4 class="text-xl font-bold {{ $step['color'] === 'blue' ? 'text-brand-blue' : 'text-brand-pink' }} mb-2 leading-tight">{{ $step['key'] }}. {{ __('angehoerigenpflege.step' . $step['key'] . '_title') }}</h4>
+                            <p class="text-lg leading-normal text-gray-600">{{ __('angehoerigenpflege.step' . $step['key'] . '_desc') }}</p>
                         </div>
                     </div>
                 @endforeach

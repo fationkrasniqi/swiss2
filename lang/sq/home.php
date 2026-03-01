@@ -109,9 +109,9 @@ return [
     
     'reviews_title' => 'Vlerësimet & Komentet',
     'reviews_subtitle' => 'Çfarë thonë klientët tanë për ne',
-    'review_1_text' => 'Kujdes i shkëlqyer për nënën time. Stafi është shumë profesional dhe i dashamër. Jam shumë i kënaqur me shërbimin.',
+    'review_1_text' => 'Kujdes i shkëlqyer për nënën time. Stafi është shumë profesional dhe i dashur. Jam shumë i kënaqur me shërbimin.',
     'review_2_text' => 'Vendimi më i mirë për kujdesin e babait tim. Stafi është shumë kompetent dhe miqsor. E rekomandoj fort!',
-    'review_3_text' => 'Shërbim i shkëlqyer! Ekipi kujdeset mrekullisht për gjyshen time. Ajo është e lumtur dhe e mirëmbajtur.',
+    'review_3_text' => 'Shërbim i shkëlqyer! Ekipi kujdeset mrekullisht për gjyshen time. Ajo është e lumtur.',
     
     'team_title' => 'Ekipi Ynë',
     'team_subtitle' => 'Staf profesional dhe me eksperiencë',
