@@ -1,3 +1,5 @@
+
+text/x-generic services.php ( PHP script, UTF-8 Unicode text, with CRLF line terminators )
 <?php
 
 return [

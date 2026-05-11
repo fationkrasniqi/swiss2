@@ -5,7 +5,7 @@ return [
     'page_subtitle' => 'Grundpflege bis Zusatzleistungen – individuell, menschlich und professionell.',
     'footer_note' => 'Kurz gesagt: Sie pflegen – wir begleiten. Einfach, sicher und persönlich.',
     'extra_1_title' => 'Präzision & Vertrauen',
-    'extra_1_text' => 'Jeder Pflegeplan wird klar dokumentiert und regelmäßig überprüft – für gleichbleibende Qualität.',
+    'extra_1_text' => 'Jeder Pflegeplan wird klar dokumentiert und regelmässig überprüft – für gleichbleibende Qualität.',
     'extra_2_title' => 'Menschliche Betreuung',
     'extra_2_text' => 'Herzliche, respektvolle Betreuung – angepasst an Bedürfnisse und Rhythmus.',
     'extra_3_title' => 'Flexibilität',
@@ -23,7 +23,7 @@ return [
             ],
         ],
         [
-            'title' => 'Behandlungspflege / Medizinische Pflege',
+            'title' => 'Behandlungspflege / Medizinische Pflege - überwachung',
             'items' => [
                 'Medikamentengabe & -kontrolle',
                 'Wundversorgung, Injektionen',

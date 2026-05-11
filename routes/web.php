@@ -5,8 +5,10 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ContactMessageController;
+use App\Http\Controllers\JobApplicationController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\CantonController;
+use App\Http\Controllers\Admin\JobController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +22,11 @@ Route::post('/services', [ClientController::class, 'store'])->name('services.sto
 Route::get('/services-details', [PageController::class, 'servicesDetails'])->name('services-details');
 Route::post('/contact', [ContactMessageController::class, 'store'])->name('contact.store');
 
+// Jobs & Applications (Public)
+Route::get('/jobs', [JobApplicationController::class, 'index'])->name('jobs.index');
+Route::get('/jobs/{job}/apply', [JobApplicationController::class, 'create'])->name('jobs.apply');
+Route::post('/jobs/{job}/apply', [JobApplicationController::class, 'store'])->name('jobs.apply.store');
+
 // Language switcher
 Route::get('/lang/{locale}', function (string $locale) {
     if (in_array($locale, ['en', 'de', 'sq', 'fr'])) {
@@ -27,9 +34,6 @@ Route::get('/lang/{locale}', function (string $locale) {
     }
     return redirect()->back();
 })->name('lang.switch');
-
-// API: Canton prices
-Route::get('/api/cantons/prices', [CantonController::class, 'getPrices'])->name('api.cantons.prices');
 
 // Route for the page /angehoerigenpflege with single Blade view and lang translations
 Route::get('/angehoerigenpflege', function () {
@@ -90,4 +94,20 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
     Route::get('/admin/cantons', [CantonController::class, 'index'])->name('admin.cantons');
     Route::patch('/admin/cantons/{canton}', [CantonController::class, 'update'])->name('admin.cantons.update');
+
+    // Jobs Management
+    Route::resource('admin/jobs', JobController::class)->names([
+        'index' => 'admin.jobs.index',
+        'create' => 'admin.jobs.create',
+        'store' => 'admin.jobs.store',
+        'show' => 'admin.jobs.show',
+        'edit' => 'admin.jobs.edit',
+        'update' => 'admin.jobs.update',
+        'destroy' => 'admin.jobs.destroy',
+    ]);
+    Route::get('/admin/jobs/{job}/applications', [JobController::class, 'applications'])->name('admin.jobs.applications');
+    Route::patch('/admin/applications/{application}/mark-read', [JobController::class, 'markAsRead'])->name('admin.applications.mark-read');
+
+    // API: Canton prices (Admin only)
+    Route::get('/api/cantons/prices', [CantonController::class, 'getPrices'])->name('api.cantons.prices');
 });

@@ -80,7 +80,7 @@
                         ['icon' => 'fa-bell',           'key' => 3, 'color' => 'blue'],
                         ['icon' => 'fa-user-doctor',    'key' => 4, 'color' => 'pink'],
                         ['icon' => 'fa-hands-helping',  'key' => 5, 'color' => 'blue'],
-                        ['icon' => 'fa-sliders',        'key' => 8, 'color' => 'pink'],
+                        ['icon' => 'fa-sliders',        'key' => 6, 'color' => 'pink'],
                     ];
                 @endphp
                 @foreach($steps as $step)

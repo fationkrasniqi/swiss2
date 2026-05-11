@@ -21,10 +21,10 @@
                 <tbody class="divide-y divide-gray-200">
                     @forelse($clients as $client)
                     <tr class="hover:bg-gray-50">
-                        <td class="whitespace-nowrap px-4 py-3 text-sm font-medium text-gray-900">{{ $client->full_name }}</td>
-                        <td class="whitespace-nowrap px-4 py-3 text-sm text-gray-600">{{ $client->email }}</td>
-                        <td class="whitespace-nowrap px-4 py-3 text-sm text-gray-600">{{ $client->full_phone }}</td>
-                        <td class="whitespace-nowrap px-4 py-3 text-sm text-gray-600">{{ $client->canton }}</td>
+                        <td class="whitespace-nowrap px-4 py-3 text-sm font-medium text-gray-900">{{ trim(($client->first_name ?? '') . ' ' . ($client->last_name ?? '')) }}</td>
+                        <td class="whitespace-nowrap px-4 py-3 text-sm text-gray-600">{{ $client->email ?? 'N/A' }}</td>
+                        <td class="whitespace-nowrap px-4 py-3 text-sm text-gray-600">{{ ($client->phone_prefix ?? '') . ' ' . ($client->phone_number ?? '') }}</td>
+                        <td class="whitespace-nowrap px-4 py-3 text-sm text-gray-600">{{ $client->canton ?? 'N/A' }}</td>
                         <td class="max-w-xs px-4 py-3 text-sm text-gray-600" style="max-width:320px; white-space:pre-line; word-break:break-word; overflow:auto;">
                             @php
                                 $serviceKeys = [];
@@ -53,7 +53,7 @@
                             @endif
                         </td>
                         <!-- <td class="whitespace-nowrap px-4 py-3 text-sm font-semibold text-teal-700">CHF {{ $client->total_price }}</td> -->
-                        <td class="whitespace-nowrap px-4 py-3 text-sm text-gray-500">{{ $client->created_at->format('d.m.Y') }}</td>
+                        <td class="whitespace-nowrap px-4 py-3 text-sm text-gray-500">{{ $client->created_at ? \Carbon\Carbon::parse($client->created_at)->format('d.m.Y') : 'N/A' }}</td>
                         <td class="whitespace-nowrap px-4 py-3 text-sm">
                             <div class="flex gap-2">
                                 <a href="{{ route('admin.clients.pdf', $client) }}" target="_blank" class="text-blue-600 hover:text-blue-800" title="View PDF">

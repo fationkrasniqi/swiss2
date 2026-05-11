@@ -14,6 +14,7 @@
             <a href="{{ url('/') }}#home" class="text-sm font-medium text-gray-600 hover:text-brand-blue transition">{{ __('home.nav_home') }}</a>
             <a href="{{ route('services') }}" class="text-sm font-medium text-gray-600 hover:text-brand-blue transition">{{ __('home.nav_services') }}</a>
             <a href="{{ route('services-details') }}" class="text-sm font-medium text-gray-600 hover:text-brand-blue transition">{{ __('home.nav_services_details') }}</a>
+            <a href="{{ route('jobs.index') }}" class="text-sm font-medium text-gray-600 hover:text-brand-blue transition">{{ __('home.nav_jobs') }}</a>
             <a href="{{ url('/') }}#contact" class="text-sm font-medium text-gray-600 hover:text-brand-blue transition">{{ __('home.nav_contact') }}</a>
 
             {{-- Language Switcher --}}
@@ -54,6 +55,7 @@
             <a href="{{ url('/') }}#home" @click="open = false" class="text-base font-medium text-gray-700 hover:text-brand-blue py-2 transition">{{ __('home.nav_home') }}</a>
             <a href="{{ route('services') }}" @click="open = false" class="text-base font-medium text-gray-700 hover:text-brand-blue py-2 transition">{{ __('home.nav_services') }}</a>
             <a href="{{ route('services-details') }}" @click="open = false" class="text-base font-medium text-gray-700 hover:text-brand-blue py-2 transition">{{ __('home.nav_services_details') }}</a>
+            <a href="{{ route('jobs.index') }}" @click="open = false" class="text-base font-medium text-gray-700 hover:text-brand-blue py-2 transition">{{ __('home.nav_jobs') }}</a>
             <a href="{{ url('/') }}#contact" @click="open = false" class="text-base font-medium text-gray-700 hover:text-brand-blue py-2 transition">{{ __('home.nav_contact') }}</a>
 
             <div class="flex gap-2 pt-2 border-t border-gray-100">

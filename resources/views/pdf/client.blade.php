@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Client #{{ $client->id }}</title>
+    <title>Client Service Summary</title>
     <style>
         body { font-family: DejaVu Sans, sans-serif; font-size: 14px; color: #1a1a1a; margin: 40px; }
         .header { text-align: center; margin-bottom: 30px; border-bottom: 2px solid #0d9488; padding-bottom: 20px; }
@@ -27,28 +27,28 @@
     <div class="section">
         <h2>Client Information</h2>
         <table>
-            <tr><td>Name</td><td>{{ $client->full_name }}</td></tr>
-            <tr><td>Email</td><td>{{ $client->email }}</td></tr>
-            <tr><td>Phone</td><td>{{ $client->full_phone }}</td></tr>
+            <tr><td>Name</td><td>{{ trim(($client->first_name ?? '') . ' ' . ($client->last_name ?? '')) }}</td></tr>
+            <tr><td>Email</td><td>{{ $client->email ?? 'N/A' }}</td></tr>
+            <tr><td>Phone</td><td>{{ ($client->phone_prefix ?? '') . ' ' . ($client->phone_number ?? '') }}</td></tr>
         </table>
     </div>
 
     <div class="section">
         <h2>Service Details</h2>
         <table>
-            <tr><td>Canton</td><td>{{ $client->canton }}</td></tr>
-            <tr><td>Services</td><td>{{ $client->services }}</td></tr>
+            <tr><td>Canton</td><td>{{ $client->canton ?? 'N/A' }}</td></tr>
+            <tr><td>Services</td><td>{{ $client->services ?? 'N/A' }}</td></tr>
             @if($client->service_date)
-            <tr><td>Service Date</td><td>{{ $client->service_date->format('d.m.Y') }}</td></tr>
+            <tr><td>Service Date</td><td>{{ \Carbon\Carbon::parse($client->service_date)->format('d.m.Y') }}</td></tr>
             @endif
-            <tr><td>Booked On</td><td>{{ $client->created_at->format('d.m.Y H:i') }}</td></tr>
+            <tr><td>Booked On</td><td>{{ \Carbon\Carbon::parse($client->created_at)->format('d.m.Y H:i') }}</td></tr>
         </table>
     </div>
 
 
     <div class="footer">
         <p>Janira Care &mdash; janiracare.ch</p>
-        <p>Generated {{ now()->format('d.m.Y H:i') }}</p>
+        <p>Generated {{ \Carbon\Carbon::now()->format('d.m.Y H:i') }}</p>
     </div>
 </body>
 </html>

@@ -26,12 +26,12 @@
 
                     {{-- Stat Cards --}}
                     <div class="mt-[18px] flex flex-wrap justify-center gap-3.5 lg:justify-start">
+                        <!--<div class="flex min-h-[86px] min-w-[120px] flex-1 flex-col items-center justify-center rounded-xl bg-white px-[18px] py-4 text-center shadow-[0_6px_18px_rgba(18,72,126,0.06)]">-->
+                        <!--    <span class="mb-1.5 text-[26px] font-bold text-brand-blue">15</span>-->
+                        <!--    <span class="text-[13px] leading-tight text-gray-500">{{ __('home.stat_doctors') }}</span>-->
+                        <!--</div>-->
                         <div class="flex min-h-[86px] min-w-[120px] flex-1 flex-col items-center justify-center rounded-xl bg-white px-[18px] py-4 text-center shadow-[0_6px_18px_rgba(18,72,126,0.06)]">
-                            <span class="mb-1.5 text-[26px] font-bold text-brand-blue">15</span>
-                            <span class="text-[13px] leading-tight text-gray-500">{{ __('home.stat_doctors') }}</span>
-                        </div>
-                        <div class="flex min-h-[86px] min-w-[120px] flex-1 flex-col items-center justify-center rounded-xl bg-white px-[18px] py-4 text-center shadow-[0_6px_18px_rgba(18,72,126,0.06)]">
-                            <span class="mb-1.5 text-[26px] font-bold text-brand-blue">150</span>
+                            <span class="mb-1.5 text-[26px] font-bold text-brand-blue">20</span>
                             <span class="text-[13px] leading-tight text-gray-500">{{ __('home.stat_patients') }}</span>
                         </div>
                         <div class="flex min-h-[86px] min-w-[120px] flex-1 flex-col items-center justify-center rounded-xl bg-white px-[18px] py-4 text-center shadow-[0_6px_18px_rgba(18,72,126,0.06)]">
@@ -188,18 +188,28 @@
             </div>
 
             {{-- Service Cards --}}
+            <!--@php-->
+            <!--    $services = [-->
+            <!--        ['icon' => 'fa-user-nurse',  'title' => __('home.service_elderly_care'),  'desc' => __('home.service_elderly_care_desc'),  'cat' => 'care'],-->
+            <!--        ['icon' => 'fa-bath',        'title' => __('home.service_hygiene'),        'desc' => __('home.service_hygiene_desc'),        'cat' => 'care'],-->
+            <!--        ['icon' => 'fa-scissors',    'title' => __('home.service_hair'),           'desc' => __('home.service_hair_desc'),           'cat' => 'care'],-->
+            <!--        ['icon' => 'fa-utensils',    'title' => __('home.service_eating'),         'desc' => __('home.service_eating_desc'),         'cat' => 'care'],-->
+            <!--        ['icon' => 'fa-pills',       'title' => __('home.service_medication'),     'desc' => __('home.service_medication_desc'),     'cat' => 'health'],-->
+            <!--        ['icon' => 'fa-eye',         'title' => __('home.service_monitoring'),     'desc' => __('home.service_monitoring_desc'),     'cat' => 'health'],-->
+            <!--        ['icon' => 'fa-palette',     'title' => __('home.service_activities'),     'desc' => __('home.service_activities_desc'),     'cat' => 'activity'],-->
+            <!--        ['icon' => 'fa-ambulance',   'title' => __('home.service_transport'),      'desc' => __('home.service_transport_desc'),      'cat' => 'health'],-->
+            <!--    ];-->
+            <!--@endphp-->
             @php
-                $services = [
-                    ['icon' => 'fa-user-nurse',  'title' => __('home.service_elderly_care'),  'desc' => __('home.service_elderly_care_desc'),  'cat' => 'care'],
-                    ['icon' => 'fa-bath',        'title' => __('home.service_hygiene'),        'desc' => __('home.service_hygiene_desc'),        'cat' => 'care'],
-                    ['icon' => 'fa-scissors',    'title' => __('home.service_hair'),           'desc' => __('home.service_hair_desc'),           'cat' => 'care'],
-                    ['icon' => 'fa-utensils',    'title' => __('home.service_eating'),         'desc' => __('home.service_eating_desc'),         'cat' => 'care'],
-                    ['icon' => 'fa-pills',       'title' => __('home.service_medication'),     'desc' => __('home.service_medication_desc'),     'cat' => 'health'],
-                    ['icon' => 'fa-eye',         'title' => __('home.service_monitoring'),     'desc' => __('home.service_monitoring_desc'),     'cat' => 'health'],
-                    ['icon' => 'fa-palette',     'title' => __('home.service_activities'),     'desc' => __('home.service_activities_desc'),     'cat' => 'activity'],
-                    ['icon' => 'fa-ambulance',   'title' => __('home.service_transport'),      'desc' => __('home.service_transport_desc'),      'cat' => 'health'],
-                ];
-            @endphp
+$services = [
+    ['icon' => 'fa-user-nurse',  'title' => __('home.service_elderly_care'),  'desc' => __('home.service_elderly_care_desc'),  'cat' => 'care'],
+    ['icon' => 'fa-utensils',    'title' => __('home.service_eating'),        'desc' => __('home.service_eating_desc'),        'cat' => 'care'],
+    ['icon' => 'fa-pills',       'title' => __('home.service_medication'),    'desc' => __('home.service_medication_desc'),    'cat' => 'health'],
+    ['icon' => 'fa-eye',         'title' => __('home.service_monitoring'),    'desc' => __('home.service_monitoring_desc'),    'cat' => 'health'],
+    ['icon' => 'fa-palette',     'title' => __('home.service_activities'),    'desc' => __('home.service_activities_desc'),    'cat' => 'activity'],
+    ['icon' => 'fa-ambulance',   'title' => __('home.service_transport'),     'desc' => __('home.service_transport_desc'),     'cat' => 'health']
+];
+@endphp
 
             <div class="mt-[30px] grid gap-5" style="grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));">
                 @foreach($services as $service)
@@ -335,48 +345,61 @@
         </div>
     </section>
 
-    {{-- ==================== TEAM ==================== --}}
-    <!-- <section class="bg-[#F6F9FC]" style="padding: 68px 28px;">
+  {{-- ==================== TEAM ==================== --}}
+    <section class="bg-[#F6F9FC]" style="padding: 68px 28px;">
         <div class="mx-auto max-w-[1200px]">
             <div class="mb-[60px] text-center">
                 <h2 class="mb-4 text-[38px] font-semibold text-gray-800">{{ __('home.team_title') }}</h2>
                 <p class="mx-auto max-w-[820px] text-[22px] leading-[1.7] text-gray-500">{{ __('home.team_subtitle') }}</p>
+                <p class="mt-4 text-[28px] font-bold text-brand-pink">{{ __('home.team_slogan') }}</p>
             </div>
 
-            <div class="grid gap-[30px]" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+            <div class="grid gap-[30px] grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
                 @php
                     $team = [
-                        ['img' => 'doctor2', 'name' => 'Dr. Anna Weber',      'role' => __('home.team_role_1'), 'bio' => __('home.team_bio_1'), 'skills' => [__('home.team_skill_1_1'), __('home.team_skill_1_2'), __('home.team_skill_1_3')]],
-                        ['img' => 'doctor1', 'name' => 'Dr. Michael Schmidt', 'role' => __('home.team_role_2'), 'bio' => __('home.team_bio_2'), 'skills' => [__('home.team_skill_2_1'), __('home.team_skill_2_2'), __('home.team_skill_2_3')]],
-                        ['img' => 'doctor3', 'name' => 'Sarah Müller',        'role' => __('home.team_role_3'), 'bio' => __('home.team_bio_3'), 'skills' => [__('home.team_skill_3_1'), __('home.team_skill_3_2'), __('home.team_skill_3_3')]],
+                        ['img' => 'drita', 'name' => 'Drita Krasniqi', 'role' => __('home.team_role_1'), 'email' => 'd.krasniqi@janiracare.ch', 'phone' => '+41 79 223 50 50', 'hasPhoto' => true],
+                        ['img' => 'ibishi', 'name' => 'Ibish Totaj', 'role' => __('home.team_role_2'), 'email' => 'i.totaj@janiracare.ch', 'phone' => '+41 79 197 72 72', 'hasPhoto' => true],
+                        ['img' => 'ilirjana', 'name' => 'Ilirjana Aruqi', 'role' => __('home.team_role_3'), 'email' => 'i.aruqi@janiracare.ch', 'phone' => '+41 79 203 07 07', 'hasPhoto' => true],
+                 ['img' => 'placeholder', 'name' => 'Albina Qovanaj', 'role' => __('home.team_role_4'), 'email' => 'info@janiracare.ch', 'phone' => '+41 79 680 30 70', 'hasPhoto' => false],
+
                     ];
                 @endphp
 
                 @foreach($team as $member)
                     <div class="group overflow-hidden rounded-[28px] border border-brand-blue/[.08] bg-white text-center shadow-md transition-all duration-500 hover:-translate-y-1.5 hover:border-brand-blue hover:shadow-xl">
                         <div class="h-[320px] overflow-hidden bg-brand-blue/5">
-                            <picture>
-                                <source srcset="{{ asset('images/' . $member['img'] . '.webp') }}" type="image/webp">
-                                <img src="{{ asset('images/' . $member['img'] . '.webp') }}" alt="{{ $member['name'] }}"
-                                     class="h-full w-full object-cover transition-transform duration-600 group-hover:scale-[1.08]"
-                                     loading="lazy" width="400" height="320">
-                            </picture>
+                            @if($member['hasPhoto'])
+                                <picture>
+                                    <source srcset="{{ asset('images/' . $member['img'] . '.webp') }}" type="image/webp">
+                                    <img src="{{ asset('images/' . $member['img'] . '.webp') }}" alt="{{ $member['name'] }}"
+                                         class="h-full w-full object-cover transition-transform duration-600 group-hover:scale-[1.08]"
+                                         loading="lazy" width="400" height="320">
+                                </picture>
+                            @else
+                                <div class="flex h-full w-full items-center justify-center bg-gradient-to-br from-brand-pink/10 to-brand-blue/10">
+                                    <i class="fas fa-user-nurse text-brand-pink" style="font-size: 100px;"></i>
+                                </div>
+                            @endif
                         </div>
                         <div class="p-7">
                             <h3 class="mb-1 text-[28px] font-semibold text-gray-800">{{ $member['name'] }}</h3>
-                            <p class="mb-4 text-base font-semibold text-brand-pink">{{ $member['role'] }}</p>
-                            <div class="mb-4 flex flex-wrap justify-center gap-1.5">
-                                @foreach($member['skills'] as $skill)
-                                    <span class="rounded-2xl bg-brand-pink/10 px-3.5 py-1.5 text-[14px] font-semibold text-brand-pink">{{ $skill }}</span>
-                                @endforeach
+                            <p class="mb-3 text-base font-semibold text-brand-pink">{{ $member['role'] }}</p>
+                            <div class="mb-3 space-y-1.5 text-sm text-gray-600">
+                                <div class="flex items-center justify-center gap-2">
+                                    <i class="fas fa-envelope text-brand-blue"></i>
+                                    <a href="mailto:{{ $member['email'] }}" class="hover:text-brand-blue transition">{{ $member['email'] }}</a>
+                                </div>
+                                <div class="flex items-center justify-center gap-2">
+                                    <i class="fas fa-phone text-brand-blue"></i>
+                                    <a href="tel:{{ $member['phone'] }}" class="hover:text-brand-blue transition">{{ $member['phone'] }}</a>
+                                </div>
                             </div>
-                            <p class="text-base leading-[1.7] text-gray-500">{{ $member['bio'] }}</p>
                         </div>
                     </div>
                 @endforeach
             </div>
         </div>
-    </section> -->
+    </section>
 
     {{-- ==================== CONTACT ==================== --}}
     <section id="contact" class="bg-[#f8fafc]" style="padding: 68px 28px;">
@@ -389,49 +412,76 @@
             <div class="mt-10 grid gap-[30px] lg:grid-cols-2">
                 {{-- Left: Contact Info --}}
                 <div>
-                    {{-- Contact Cards --}}
-                    <div class="mb-5 grid gap-3">
+                    {{-- Top 3 Cards in a Row --}}
+                    <div class="mb-5 grid grid-cols-1 gap-3 md:grid-cols-3">
                         {{-- Phone --}}
-                        <div class="flex items-center gap-5 rounded-xl bg-white p-4 shadow-[0_3px_12px_rgba(0,0,0,0.06)]">
-                            <div class="flex h-[35px] w-[35px] shrink-0 items-center justify-center rounded-full bg-brand-blue text-white shadow-[0_6px_18px_rgba(18,72,126,0.12)] transition hover:-translate-y-1">
+                        <div class="flex flex-col items-center rounded-xl bg-white p-4 text-center shadow-[0_3px_12px_rgba(0,0,0,0.06)] transition hover:shadow-[0_6px_18px_rgba(18,72,126,0.12)]">
+                            <div class="mb-2 flex h-[35px] w-[35px] items-center justify-center rounded-full bg-brand-blue text-white shadow-[0_6px_18px_rgba(18,72,126,0.12)]">
                                 <i class="fas fa-phone-volume text-[16px]"></i>
                             </div>
-                            <div>
-                                <h4 class="mb-0.5 text-[14px] font-semibold text-gray-800">{{ __('home.contact_phone') }}</h4>
-                                <a href="tel:+41714227777" class="text-[14px] font-semibold text-brand-blue hover:underline">+41 71 422 77 77</a>
-                            </div>
+                            <h4 class="mb-1 text-[13px] font-semibold text-gray-800">{{ __('home.contact_phone') }}</h4>
+                            <a href="tel:+41714227777" class="text-[13px] font-semibold text-brand-blue hover:underline">+41 71 422 77 77</a>
                         </div>
 
                         {{-- Email --}}
-                        <div class="flex items-center gap-5 rounded-xl bg-white p-4 shadow-[0_3px_12px_rgba(0,0,0,0.06)]">
-                            <div class="flex h-[35px] w-[35px] shrink-0 items-center justify-center rounded-full bg-brand-blue text-white shadow-[0_6px_18px_rgba(18,72,126,0.12)] transition hover:-translate-y-1">
+                        <div class="flex flex-col items-center rounded-xl bg-white p-4 text-center shadow-[0_3px_12px_rgba(0,0,0,0.06)] transition hover:shadow-[0_6px_18px_rgba(18,72,126,0.12)]">
+                            <div class="mb-2 flex h-[35px] w-[35px] items-center justify-center rounded-full bg-brand-blue text-white shadow-[0_6px_18px_rgba(18,72,126,0.12)]">
                                 <i class="fas fa-paper-plane text-[16px]"></i>
                             </div>
-                            <div>
-                                <h4 class="mb-0.5 text-[14px] font-semibold text-gray-800">{{ __('home.contact_email_label') }}</h4>
-                                <a href="mailto:info@janiracare.ch" class="text-[14px] font-semibold text-brand-blue hover:underline">info@janiracare.ch</a>
-                            </div>
+                            <h4 class="mb-1 text-[13px] font-semibold text-gray-800">{{ __('home.contact_email_label') }}</h4>
+                            <a href="mailto:info@janiracare.ch" class="break-all text-[13px] font-semibold text-brand-blue hover:underline">info@janiracare.ch</a>
                         </div>
 
                         {{-- Address --}}
-                        <div class="flex items-center gap-5 rounded-xl bg-white p-4 shadow-[0_3px_12px_rgba(0,0,0,0.06)]">
-                            <div class="flex h-[35px] w-[35px] shrink-0 items-center justify-center rounded-full bg-brand-blue text-white shadow-[0_6px_18px_rgba(18,72,126,0.12)] transition hover:-translate-y-1">
+                        <div class="flex flex-col items-center rounded-xl bg-white p-4 text-center shadow-[0_3px_12px_rgba(0,0,0,0.06)] transition hover:shadow-[0_6px_18px_rgba(18,72,126,0.12)]">
+                            <div class="mb-2 flex h-[35px] w-[35px] items-center justify-center rounded-full bg-brand-blue text-white shadow-[0_6px_18px_rgba(18,72,126,0.12)]">
                                 <i class="fas fa-location-dot text-[16px]"></i>
                             </div>
-                            <div>
-                                <h4 class="mb-0.5 text-[14px] font-semibold text-gray-800">{{ __('home.contact_address') }}</h4>
-                                <a href="https://www.google.com/maps/place/Janira+Care/@47.44105359927428,9.410949012100318,17z/data=!3m1!4b1!4m6!3m5!1s0x479b1fbaba0579bb:0x740426d604a3661f!8m2!3d47.44105!4d9.41095!16s%2Fg%2F11y5pyfwy9" target="_blank" rel="noopener" class="m-0 text-[13px] leading-[1.5] text-gray-500 hover:text-brand-blue underline">Lerchentalstrasse 2B, 9016 St. Gallen</a>
-                            </div>
+                            <h4 class="mb-1 text-[13px] font-semibold text-gray-800">{{ __('home.contact_address') }}</h4>
+                            <a href="https://www.google.com/maps/place/Janira+Care/@47.44105359927428,9.410949012100318,17z/data=!3m1!4b1!4m6!3m5!1s0x479b1fbaba0579bb:0x740426d604a3661f!8m2!3d47.44105!4d9.41095!16s%2Fg%2F11y5pyfwy9" target="_blank" rel="noopener" class="text-[12px] leading-[1.4] text-gray-500 hover:text-brand-blue hover:underline">Lerchentalstrasse 2B, 9016 St. Gallen</a>
                         </div>
+                    </div>
 
-                        {{-- Hours --}}
-                        <div class="flex items-center gap-5 rounded-xl bg-white p-4 shadow-[0_3px_12px_rgba(0,0,0,0.06)]">
-                            <div class="flex h-[35px] w-[35px] shrink-0 items-center justify-center rounded-full bg-brand-blue text-white shadow-[0_6px_18px_rgba(18,72,126,0.12)] transition hover:-translate-y-1">
-                                <i class="fas fa-clock text-[16px]"></i>
+                    {{-- Business Hours / Orari i Punës --}}
+                    <div class="group relative mb-5 overflow-hidden rounded-xl bg-white p-4 shadow-[0_3px_12px_rgba(0,0,0,0.06)] transition-all duration-300 hover:shadow-[0_6px_18px_rgba(18,72,126,0.12)]">
+                        <div class="relative mb-3 flex items-center gap-2">
+                            <div class="flex h-[40px] w-[40px] items-center justify-center rounded-xl bg-brand-pink text-white shadow-md transition-all duration-300 group-hover:scale-105">
+                                <i class="fas fa-clock text-[18px]"></i>
                             </div>
-                            <div>
-                                <h4 class="mb-0.5 text-[14px] font-semibold text-gray-800">{{ __('home.contact_hours') }}</h4>
-                                <p class="m-0 text-[13px] leading-[1.5] text-gray-500">{{ __('home.contact_hours_weekdays') }}</p>
+                            <h4 class="text-[15px] font-bold text-gray-800">{{ __('home.availability_title') }}</h4>
+                        </div>
+                        <div class="relative space-y-2 text-[13px] leading-relaxed text-gray-700">
+                            <p class="font-medium">{{ __('home.availability_office_hours') }}</p>
+                            <p>{{ __('home.availability_after_hours') }}</p>
+                            
+                            {{-- Emergency Service Box --}}
+                            <div class="mt-2.5 overflow-hidden rounded-lg bg-blue-50/30 p-2.5">
+                                <div class="mb-1.5 flex items-center gap-1.5">
+                                    <div class="flex h-[26px] w-[26px] items-center justify-center rounded-lg bg-brand-pink text-white">
+                                        <i class="fas fa-shield-heart text-[12px]"></i>
+                                    </div>
+                                    <p class="text-[13px] font-bold text-brand-blue">{{ __('home.availability_emergency_title') }}</p>
+                                </div>
+                                <p class="mb-2 text-[12px] text-gray-600">{{ __('home.availability_emergency_desc') }}</p>
+                                <ul class="space-y-1">
+                                    <li class="flex items-start gap-1.5">
+                                        <i class="fas fa-check text-[10px] text-brand-pink mt-0.5"></i>
+                                        <span class="text-[12px]">{{ __('home.availability_emergency_night') }}</span>
+                                    </li>
+                                    <li class="flex items-start gap-1.5">
+                                        <i class="fas fa-check text-[10px] text-brand-pink mt-0.5"></i>
+                                        <span class="text-[12px]">{{ __('home.availability_emergency_weekend') }}</span>
+                                    </li>
+                                    <li class="flex items-start gap-1.5">
+                                        <i class="fas fa-check text-[10px] text-brand-pink mt-0.5"></i>
+                                        <span class="text-[12px]">{{ __('home.availability_emergency_nurse') }}</span>
+                                    </li>
+                                    <li class="flex items-start gap-1.5">
+                                        <i class="fas fa-check text-[10px] text-brand-pink mt-0.5"></i>
+                                        <span class="text-[12px]">{{ __('home.availability_emergency_response') }}</span>
+                                    </li>
+                                </ul>
+                                <p class="mt-2 text-[11.5px] text-gray-600">{{ __('home.availability_emergency_closing') }}</p>
                             </div>
                         </div>
                     </div>
@@ -489,7 +539,7 @@
                             @error('first_name')<p class="mt-1 text-xs text-red-500"><i class="fas fa-exclamation-circle"></i> {{ $message }}</p>@enderror
                         </div>
 
-                        {{-- Last Name --}}
+                        {{-- Last Name --}}+
                         <div>
                             <label class="mb-1.5 flex items-center gap-1.5 text-[13px] font-semibold text-brand-blue">
                                 <i class="fas fa-user text-[12px] text-brand-pink"></i>

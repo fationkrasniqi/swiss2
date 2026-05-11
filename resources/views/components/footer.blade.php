@@ -30,9 +30,12 @@
                         <i class="fa-solid fa-location-dot w-5 text-center text-brand-pink"></i>
                         <a href="https://www.google.com/maps/place/Janira+Care/@47.44105359927428,9.410949012100318,17z/data=!3m1!4b1!4m6!3m5!1s0x479b1fbaba0579bb:0x740426d604a3661f!8m2!3d47.44105!4d9.41095!16s%2Fg%2F11y5pyfwy9" target="_blank" rel="noopener" class="hover:text-brand-pink underline">Lerchentalstrasse 2B, 9016 St. Gallen</a>
                     </li>
-                    <li class="flex items-center gap-3">
-                        <i class="fa-solid fa-clock w-5 text-center text-brand-pink"></i>
-                        <span>{{ __('home.contact_hours_weekdays') }}</span>
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-clock w-5 text-center text-brand-pink mt-0.5"></i>
+                        <div>
+                            <div class="font-semibold text-white">{{ __('home.availability_office_hours_title') }}</div>
+                            <div>{{ __('home.contact_hours_weekdays') }}</div>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -50,7 +53,7 @@
                     <a href="https://www.linkedin.com/in/janira-care-3201833a7" target="_blank" class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-brand-pink hover:scale-110">
                         <i class="fa-brands fa-linkedin-in"></i>
                     </a>
-                    <a href="https://wa.me/41714227777" target="_blank" class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-brand-pink hover:scale-110">
+                    <a href="https://wa.me/41792235050" target="_blank" class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-brand-pink hover:scale-110">
                         <i class="fa-brands fa-whatsapp"></i>
                     </a>
                 </div>
