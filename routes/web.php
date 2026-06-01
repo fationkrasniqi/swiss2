@@ -49,8 +49,6 @@ Route::get('/angehoerigenpflege', function () {
 Route::middleware('guest')->group(function () {
     Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
     Route::post('/login', [AuthController::class, 'login']);
-    Route::get('/register', [AuthController::class, 'showRegister'])->name('register');
-    Route::post('/register', [AuthController::class, 'register']);
 });
 
 Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth')->name('logout');
@@ -107,6 +105,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     ]);
     Route::get('/admin/jobs/{job}/applications', [JobController::class, 'applications'])->name('admin.jobs.applications');
     Route::patch('/admin/applications/{application}/mark-read', [JobController::class, 'markAsRead'])->name('admin.applications.mark-read');
+    Route::get('/admin/applications/{application}/cover-letter-pdf', [JobController::class, 'coverLetterPdf'])->name('admin.applications.cover-letter-pdf');
 
     // API: Canton prices (Admin only)
     Route::get('/api/cantons/prices', [CantonController::class, 'getPrices'])->name('api.cantons.prices');

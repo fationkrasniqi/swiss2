@@ -3,15 +3,11 @@
 namespace App\Notifications;
 
 use App\Models\JobApplication;
-use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class NewJobApplicationNotification extends Notification implements ShouldQueue
+class NewJobApplicationNotification extends Notification
 {
-    use Queueable;
-
     /**
      * Create a new notification instance.
      */
@@ -26,7 +22,7 @@ class NewJobApplicationNotification extends Notification implements ShouldQueue
      */
     public function via(object $notifiable): array
     {
-        return ['mail', 'database'];
+        return ['mail'];
     }
 
     /**
@@ -35,14 +31,14 @@ class NewJobApplicationNotification extends Notification implements ShouldQueue
     public function toMail(object $notifiable): MailMessage
     {
         return (new MailMessage)
-            ->subject('Aplikim i Ri për Punë: ' . $this->application->job->title)
-            ->greeting('Njoftim i Ri!')
-            ->line('Keni marrë një aplikim të ri për pozicionin: **' . $this->application->job->title . '**')
-            ->line('**Aplikanti:** ' . $this->application->first_name . ' ' . $this->application->last_name)
-            ->line('**Email:** ' . $this->application->email)
-            ->line('**Telefoni:** ' . $this->application->phone)
-            ->action('Shiko Aplikimin', url('/admin/jobs/' . $this->application->job_id))
-            ->line('Faleminderit për përdorimin e platformës sonë!');
+            ->subject('Neue Bewerbung: ' . $this->application->job->getLocalizedTitle())
+            ->greeting('Neue Bewerbung eingegangen!')
+            ->line('Sie haben eine neue Bewerbung für die Position erhalten: **' . $this->application->job->getLocalizedTitle() . '**')
+            ->line('**Bewerber:** ' . $this->application->first_name . ' ' . $this->application->last_name)
+            ->line('**E-Mail:** ' . $this->application->email)
+            ->line('**Telefon:** ' . $this->application->phone)
+            ->action('Bewerbung ansehen', url('/admin/jobs/' . $this->application->job_id))
+            ->line('Vielen Dank für die Nutzung unserer Plattform!');
     }
 
     /**

@@ -24,4 +24,9 @@ class Canton extends Model
             return static::pluck('price_per_hour', 'name')->toArray();
         });
     }
+
+    public function jobs()
+    {
+        return $this->hasMany(Job::class);
+    }
 }

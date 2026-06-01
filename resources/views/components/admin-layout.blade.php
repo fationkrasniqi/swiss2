@@ -16,11 +16,24 @@
         <button @click="sidebarOpen = !sidebarOpen" class="rounded-md p-2 text-gray-500 hover:bg-gray-100 lg:hidden">
             <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
-        <div class="flex items-center gap-4">
+        <div class="flex items-center gap-3">
+            {{-- EN / DE Language Switcher --}}
+            <div class="inline-flex items-center gap-0.5 rounded-lg border border-gray-200 bg-gray-50 p-0.5">
+                <a href="{{ route('lang.switch', 'en') }}"
+                   class="inline-flex items-center gap-1 rounded-md px-2.5 py-1 text-xs font-semibold transition-all
+                          {{ app()->getLocale() === 'de' ? 'text-gray-400 hover:text-gray-700' : 'bg-white shadow text-gray-900' }}">
+                    <span class="text-sm">🇬🇧</span> EN
+                </a>
+                <a href="{{ route('lang.switch', 'de') }}"
+                   class="inline-flex items-center gap-1 rounded-md px-2.5 py-1 text-xs font-semibold transition-all
+                          {{ app()->getLocale() === 'de' ? 'bg-white shadow text-gray-900' : 'text-gray-400 hover:text-gray-700' }}">
+                    <span class="text-sm">🇩🇪</span> DE
+                </a>
+            </div>
             <span class="text-sm text-gray-600">{{ auth()->user()->name }}</span>
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
-                <button type="submit" class="rounded-md px-3 py-1.5 text-sm text-red-600 transition hover:bg-red-50">Logout</button>
+                <button type="submit" class="rounded-md px-3 py-1.5 text-sm text-red-600 transition hover:bg-red-50">{{ __('admin.logout') }}</button>
             </form>
         </div>
     </header>
@@ -40,42 +53,42 @@
         <nav class="mt-4 space-y-1 px-3">
             <a href="{{ route('dashboard') }}" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium {{ request()->routeIs('dashboard') ? 'bg-teal-50 text-teal-700' : 'text-gray-700 hover:bg-gray-100' }}">
                 <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
-                Dashboard
+                {{ __('admin.nav_dashboard') }}
             </a>
             
             @if(auth()->user()->canViewClients())
             <a href="{{ route('admin.clients') }}" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium {{ request()->routeIs('admin.clients') ? 'bg-teal-50 text-teal-700' : 'text-gray-700 hover:bg-gray-100' }}">
                 <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                Clients
+                {{ __('admin.nav_clients') }}
             </a>
             @endif
 
             @if(auth()->user()->canViewMessages())
             <a href="{{ route('admin.messages') }}" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium {{ request()->routeIs('admin.messages') ? 'bg-teal-50 text-teal-700' : 'text-gray-700 hover:bg-gray-100' }}">
                 <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                Messages
+                {{ __('admin.nav_messages') }}
             </a>
             @endif
 
             @if(auth()->user()->isAdmin())
             <a href="{{ route('admin.jobs.index') }}" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium {{ request()->routeIs('admin.jobs*') ? 'bg-teal-50 text-teal-700' : 'text-gray-700 hover:bg-gray-100' }}">
                 <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                Jobs
+                {{ __('admin.nav_jobs') }}
             </a>
             <a href="{{ route('admin.users') }}" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium {{ request()->routeIs('admin.users*') ? 'bg-teal-50 text-teal-700' : 'text-gray-700 hover:bg-gray-100' }}">
                 <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
-                Users
+                {{ __('admin.nav_users') }}
             </a>
             <a href="{{ route('admin.cantons') }}" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium {{ request()->routeIs('admin.cantons') ? 'bg-teal-50 text-teal-700' : 'text-gray-700 hover:bg-gray-100' }}">
                 <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l5.447 2.724A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>
-                Cantons / Prices
+                {{ __('admin.nav_cantons') }}
             </a>
             @endif
 
             <div class="my-4 border-t"></div>
             <a href="{{ url('/') }}" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100" target="_blank">
                 <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-                View Site
+                {{ __('admin.nav_view_site') }}
             </a>
         </nav>
     </aside>

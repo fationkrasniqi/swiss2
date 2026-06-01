@@ -132,6 +132,10 @@ return [
     'team_role_2' => 'Geschäftsführer',
     'team_role_3' => 'Leitung Pflege',
     'team_role_4' => 'Dipl. Pflegefachfrau',
+    
+    'partners_title' => 'Unsere Partner',
+    'partners_subtitle' => 'Wir arbeiten mit vertrauenswürdigen Partnern zusammen, um die beste Pflege und Unterstützung für unsere Klienten zu bieten.',
+    
     'team_skill_1_1' => 'Geriatrie',
     'team_skill_1_2' => 'Kardiologie',
     'team_skill_1_3' => '25 Jahre',
@@ -141,6 +145,12 @@ return [
     'team_skill_3_1' => 'Intensivpflege',
     'team_skill_3_2' => 'Wundpflege',
     'team_skill_3_3' => '15 Jahre',
+    
+    'careers_title' => 'Karriere bei Janira Care',
+    'careers_subtitle' => 'Werden Sie Teil unseres Teams und helfen Sie uns, erstklassige Pflege zu bieten.',
+    'careers_slogan' => 'Ihre Zukunft in der Pflege beginnt hier.',
+    'careers_cta' => 'Offene Stellen',
+    'careers_positions' => 'Offene Positionen',
     
     'story_title' => 'Unsere Geschichte',
     'story_subtitle' => 'Wie alles begann und sich entwickelt hat',

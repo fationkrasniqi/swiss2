@@ -31,11 +31,6 @@
                     Sign In
                 </button>
             </form>
-
-            <p class="mt-6 text-center text-sm text-gray-500">
-                Don't have an account?
-                <a href="{{ route('register') }}" class="font-medium text-teal-600 hover:text-teal-500">Register</a>
-            </p>
         </div>
     </section>
 </x-layout>

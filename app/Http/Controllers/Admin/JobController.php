@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Job;
 use App\Models\JobApplication;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 
 class JobController extends Controller
@@ -14,7 +15,7 @@ class JobController extends Controller
      */
     public function index()
     {
-        $jobs = Job::withCount('applications')->latest()->paginate(20);
+        $jobs = Job::with('canton')->withCount('applications')->latest()->paginate(20);
         return view('admin.jobs.index', compact('jobs'));
     }
 
@@ -23,7 +24,8 @@ class JobController extends Controller
      */
     public function create()
     {
-        return view('admin.jobs.create');
+        $cantons = \App\Models\Canton::whereIn('name', ['St. Gallen', 'Zürich'])->orderBy('name')->get();
+        return view('admin.jobs.create', compact('cantons'));
     }
 
     /**
@@ -32,12 +34,25 @@ class JobController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'title' => 'required|string|max:255',
-            'description' => 'required|string',
-            'location' => 'nullable|string|max:255',
+            'title'          => 'nullable|string|max:255',
+            'title_en'       => 'nullable|string|max:255',
+            'title_de'       => 'nullable|string|max:255',
+            'title_sq'       => 'nullable|string|max:255',
+            'title_fr'       => 'nullable|string|max:255',
+            'description'    => 'nullable|string',
+            'description_en' => 'nullable|string',
+            'description_de' => 'nullable|string',
+            'description_sq' => 'nullable|string',
+            'description_fr' => 'nullable|string',
+            'location'       => 'nullable|string|max:255',
+            'canton_id'      => 'nullable|exists:cantons,id',
             'employment_type' => 'nullable|string|max:255',
-            'requirements' => 'nullable|string',
-            'is_active' => 'boolean',
+            'requirements'   => 'nullable|string',
+            'requirements_en' => 'nullable|string',
+            'requirements_de' => 'nullable|string',
+            'requirements_sq' => 'nullable|string',
+            'requirements_fr' => 'nullable|string',
+            'is_active'      => 'boolean',
         ]);
 
         Job::create($validated);
@@ -60,7 +75,8 @@ class JobController extends Controller
      */
     public function edit(Job $job)
     {
-        return view('admin.jobs.edit', compact('job'));
+        $cantons = \App\Models\Canton::whereIn('name', ['St. Gallen', 'Zürich'])->orderBy('name')->get();
+        return view('admin.jobs.edit', compact('job', 'cantons'));
     }
 
     /**
@@ -69,12 +85,25 @@ class JobController extends Controller
     public function update(Request $request, Job $job)
     {
         $validated = $request->validate([
-            'title' => 'required|string|max:255',
-            'description' => 'required|string',
-            'location' => 'nullable|string|max:255',
+            'title'          => 'nullable|string|max:255',
+            'title_en'       => 'nullable|string|max:255',
+            'title_de'       => 'nullable|string|max:255',
+            'title_sq'       => 'nullable|string|max:255',
+            'title_fr'       => 'nullable|string|max:255',
+            'description'    => 'nullable|string',
+            'description_en' => 'nullable|string',
+            'description_de' => 'nullable|string',
+            'description_sq' => 'nullable|string',
+            'description_fr' => 'nullable|string',
+            'location'       => 'nullable|string|max:255',
+            'canton_id'      => 'nullable|exists:cantons,id',
             'employment_type' => 'nullable|string|max:255',
-            'requirements' => 'nullable|string',
-            'is_active' => 'boolean',
+            'requirements'   => 'nullable|string',
+            'requirements_en' => 'nullable|string',
+            'requirements_de' => 'nullable|string',
+            'requirements_sq' => 'nullable|string',
+            'requirements_fr' => 'nullable|string',
+            'is_active'      => 'boolean',
         ]);
 
         $job->update($validated);
@@ -110,5 +139,16 @@ class JobController extends Controller
     {
         $application->update(['is_read' => true]);
         return back()->with('success', 'Application marked as read!');
+    }
+
+    /**
+     * Download cover letter as PDF
+     */
+    public function coverLetterPdf(JobApplication $application)
+    {
+        $application->load('job');
+        $pdf = Pdf::loadView('pdf.cover-letter', compact('application'));
+        $filename = 'cover-letter-' . str($application->first_name . '-' . $application->last_name)->slug() . '.pdf';
+        return $pdf->download($filename);
     }
 }

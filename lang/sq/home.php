@@ -133,6 +133,15 @@ return [
     'team_role_3' => 'Drejtore e kujdesit',
     'team_role_4' => 'Infermiere e diplomuar',
     
+    'partners_title' => 'Partnerët tanë',
+    'partners_subtitle' => 'Ne punojmë së bashku me partnerë të besueshëm për të ofruar kujdesin dhe mbështetje më të mirë  për klientët tanë.',
+    
+    'careers_title' => 'Bashkohu me ekipin tonë',
+    'careers_subtitle' => 'Bëhu pjesë e ekipit tonë dhe na ndihmo të ofrojmë kujdes të shkëlqyer',
+    'careers_slogan' => 'E ardhmja jote profesionale në kujdes fillon këtu.',
+    'careers_cta' => 'Shiko vendet e hapura',
+    'careers_positions' => 'Vende të Hapura Pune',
+    
     'story_title' => 'Historia jonë',
     'story_subtitle' => 'Si filloi gjithçka dhe si u zhvillua',
     'timeline_2009_title' => 'Fillimi',

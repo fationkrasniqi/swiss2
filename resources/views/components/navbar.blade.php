@@ -74,4 +74,4 @@
 </nav>
 
 {{-- Navbar spacer --}}
-<div class="h-16"></div>
+<div class="h-20"></div>

@@ -1,13 +1,13 @@
-<x-admin-layout title="Jobs">
+<x-admin-layout title="{{ __('admin.page_jobs') }}">
     <div class="mb-6 flex items-center justify-between">
-        <h1 class="text-2xl font-bold text-gray-900">Jobs Management</h1>
+        <h1 class="text-2xl font-bold text-gray-900">{{ __('admin.page_jobs') }}</h1>
         <a href="{{ route('admin.jobs.create') }}" 
            class="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-2.5 text-sm font-medium text-white shadow-sm transition hover:bg-blue-700"
            style="background-color: #2563eb; color: white;">
             <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
             </svg>
-            <span>Create New Job</span>
+            <span>{{ __('admin.create_job') }}</span>
         </a>
     </div>
 
@@ -22,31 +22,31 @@
             <table class="min-w-full divide-y divide-gray-200">
                 <thead class="bg-gray-50">
                     <tr>
-                        <th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">Title</th>
-                        <th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">Location</th>
-                        <th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">Type</th>
-                        <th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">Applications</th>
-                        <th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">Status</th>
-                        <th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">Date</th>
-                        <th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">Actions</th>
+                        <th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">{{ __('admin.col_title') }}</th>
+                        <th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">{{ __('admin.col_canton') }}</th>
+                        <th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">{{ __('admin.col_type') }}</th>
+                        <th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">{{ __('admin.col_applications') }}</th>
+                        <th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">{{ __('admin.col_status') }}</th>
+                        <th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">{{ __('admin.col_date') }}</th>
+                        <th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">{{ __('admin.col_actions') }}</th>
                     </tr>
                 </thead>
                 <tbody class="divide-y divide-gray-200">
                     @forelse($jobs as $job)
                     <tr class="hover:bg-gray-50">
-                        <td class="px-4 py-3 text-sm font-medium text-gray-900">{{ $job->title }}</td>
-                        <td class="px-4 py-3 text-sm text-gray-600">{{ $job->location ?? 'N/A' }}</td>
+                        <td class="px-4 py-3 text-sm font-medium text-gray-900">{{ $job->getLocalizedTitle() }}</td>
+                        <td class="px-4 py-3 text-sm text-gray-600">{{ $job->canton->name ?? 'N/A' }}</td>
                         <td class="px-4 py-3 text-sm text-gray-600">{{ $job->employment_type ?? 'N/A' }}</td>
                         <td class="px-4 py-3 text-sm">
                             <a href="{{ route('admin.jobs.applications', $job) }}" class="text-blue-600 hover:text-blue-800">
-                                {{ $job->applications_count }} applications
+                                {{ __('admin.n_applications', ['count' => $job->applications_count]) }}
                             </a>
                         </td>
                         <td class="px-4 py-3 text-sm">
                             @if($job->is_active)
-                                <span class="inline-flex rounded-full bg-green-100 px-2 py-1 text-xs font-semibold text-green-800">Active</span>
+                                <span class="inline-flex rounded-full bg-green-100 px-2 py-1 text-xs font-semibold text-green-800">{{ __('admin.status_active') }}</span>
                             @else
-                                <span class="inline-flex rounded-full bg-gray-100 px-2 py-1 text-xs font-semibold text-gray-800">Inactive</span>
+                                <span class="inline-flex rounded-full bg-gray-100 px-2 py-1 text-xs font-semibold text-gray-800">{{ __('admin.status_inactive') }}</span>
                             @endif
                         </td>
                         <td class="whitespace-nowrap px-4 py-3 text-sm text-gray-500">{{ $job->created_at->format('d.m.Y') }}</td>
@@ -58,7 +58,7 @@
                                 <a href="{{ route('admin.jobs.edit', $job) }}" class="text-yellow-600 hover:text-yellow-800" title="Edit">
                                     <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
                                 </a>
-                                <form action="{{ route('admin.jobs.destroy', $job) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this job?');">
+                                <form action="{{ route('admin.jobs.destroy', $job) }}" method="POST" onsubmit="return confirm('{{ __('admin.confirm_delete_job') }}');">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="text-red-600 hover:text-red-800" title="Delete">
@@ -74,8 +74,8 @@
                             <svg class="mx-auto h-12 w-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                             </svg>
-                            <h3 class="mt-4 text-lg font-medium text-gray-900">No jobs yet</h3>
-                            <p class="mt-2 text-sm text-gray-500">Get started by creating your first job posting.</p>
+                            <h3 class="mt-4 text-lg font-medium text-gray-900">{{ __('admin.no_jobs') }}</h3>
+                            <p class="mt-2 text-sm text-gray-500">{{ __('admin.no_jobs_hint') }}</p>
                             <div class="mt-6">
                                 <a href="{{ route('admin.jobs.create') }}" 
                                    class="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-2.5 text-sm font-medium text-white shadow-sm transition hover:bg-blue-700"
@@ -83,7 +83,7 @@
                                     <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
                                     </svg>
-                                    <span>Create Your First Job</span>
+                                    <span>{{ __('admin.create_job') }}</span>
                                 </a>
                             </div>
                         </td>

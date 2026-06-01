@@ -263,7 +263,7 @@ $services = [
                             <source srcset="{{ asset('images/' . $img . '.webp') }}" type="image/webp">
                             <img src="{{ asset('images/' . $img . '.webp') }}" alt="Elderly care gallery"
                                  class="h-full w-full object-cover transition-transform duration-600 group-hover:scale-[1.04]"
-                                 loading="lazy" width="500" height="500">
+                                 width="500" height="500">
                         </picture>
                     </div>
                 @endforeach
@@ -373,7 +373,7 @@ $services = [
                                     <source srcset="{{ asset('images/' . $member['img'] . '.webp') }}" type="image/webp">
                                     <img src="{{ asset('images/' . $member['img'] . '.webp') }}" alt="{{ $member['name'] }}"
                                          class="h-full w-full object-cover transition-transform duration-600 group-hover:scale-[1.08]"
-                                         loading="lazy" width="400" height="320">
+                                         width="400" height="320">
                                 </picture>
                             @else
                                 <div class="flex h-full w-full items-center justify-center bg-gradient-to-br from-brand-pink/10 to-brand-blue/10">
@@ -397,6 +397,163 @@ $services = [
                         </div>
                     </div>
                 @endforeach
+            </div>
+        </div>
+    </section>
+
+    {{-- ==================== OUR PARTNERS ==================== --}}
+    <section class="bg-white" style="padding: 68px 28px;">
+        <div class="mx-auto max-w-[1200px]">
+            <div class="mb-[60px] text-center">
+                <h2 class="mb-4 text-[38px] font-semibold text-gray-800">{{ __('home.partners_title') }}</h2>
+                <p class="mx-auto max-w-[820px] text-[22px] leading-[1.7] text-gray-500">{{ __('home.partners_subtitle') }}</p>
+            </div>
+
+            <div class="grid gap-[40px] grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-center justify-items-center">
+                {{-- Partner 1: HIN --}}
+                <div class="group flex items-center justify-center p-6 transition-all duration-300 hover:scale-105">
+                    <img src="{{ asset('images/hin.png') }}" 
+                         alt="HIN Partner" 
+                         class="max-h-[120px] w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                </div>
+
+                {{-- Partner 2: ASPS --}}
+                <div class="group flex items-center justify-center p-6 transition-all duration-300 hover:scale-105">
+                    <img src="{{ asset('images/asps.jpg') }}" 
+                         alt="ASPS Partner" 
+                         class="max-h-[120px] w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                </div>
+
+                {{-- Partner 3: OPAN --}}
+                <div class="group flex items-center justify-center p-6 transition-all duration-300 hover:scale-105">
+                    <img src="{{ asset('images/opan.jpg') }}" 
+                         alt="OPAN Partner" 
+                         class="max-h-[120px] w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                </div>
+
+                {{-- Partner 4: Fation Krasniqi --}}
+                <div class="group flex items-center justify-center p-6 transition-all duration-300 hover:scale-105">
+                    <img src="{{ asset('images/fationkrasniqi2.png') }}" 
+                         alt="Fation Krasniqi Partner" 
+                         class="max-h-[120px] w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{-- ==================== CAREERS/JOBS ==================== --}}
+    <section class="bg-gradient-to-br from-white via-blue-50/30 to-teal-50/50" style="padding: 68px 28px;">
+        <div class="mx-auto max-w-[1200px]">
+            {{-- Section Header --}}
+            <div class="mb-12 text-center">
+                <h2 class="mb-4 text-[38px] font-semibold text-gray-800">{{ __('home.careers_title') }}</h2>
+                <p class="mx-auto max-w-[820px] text-[22px] leading-[1.7] text-gray-500">{{ __('home.careers_subtitle') }}</p>
+                <p class="mt-4 text-[28px] font-bold text-brand-pink">{{ __('home.careers_slogan') }}</p>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+                {{-- Left: Image (60%) --}}
+                <div class="w-full lg:w-[58%] order-2 lg:order-1">
+                    <div class="relative overflow-hidden rounded-2xl shadow-2xl">
+                        <img src="{{ asset('images/jobs.png') }}" 
+                             alt="Join Our Team" 
+                             class="w-full h-auto object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-blue/20 to-transparent"></div>
+                    </div>
+                </div>
+
+                {{-- Right: Content (40%) --}}
+                <div class="w-full lg:w-[42%] order-1 lg:order-2">
+                    {{-- Open Positions Stats --}}
+                    @php
+                        $openPositions = \App\Models\Job::where('is_active', true)->count();
+                    @endphp
+
+                    <div class="mb-6 grid grid-cols-2 gap-3">
+                        <div class="rounded-xl bg-white p-4 shadow-md border border-brand-blue/10 hover:border-brand-blue/30 transition-all">
+                            <div class="flex items-center gap-2 mb-1">
+                                <div class="flex h-10 w-10 items-center justify-center rounded-full bg-brand-blue/10">
+                                    <i class="fas fa-briefcase text-brand-blue text-lg"></i>
+                                </div>
+                                <div>
+                                    <p class="text-2xl font-bold text-brand-blue">{{ $openPositions }}</p>
+                                </div>
+                            </div>
+                            <p class="text-xs font-medium text-gray-600">{{ __('home.careers_positions') }}</p>
+                        </div>
+
+                        <div class="rounded-xl bg-white p-4 shadow-md border border-teal-500/10 hover:border-teal-500/30 transition-all">
+                            <div class="flex items-center gap-2 mb-1">
+                                <div class="flex h-10 w-10 items-center justify-center rounded-full bg-teal-500/10">
+                                    <i class="fas fa-users text-teal-600 text-lg"></i>
+                                </div>
+                                <div>
+                                    <p class="text-2xl font-bold text-teal-600">5+</p>
+                                </div>
+                            </div>
+                            <p class="text-xs font-medium text-gray-600">{{ __('home.stat_staff_members') }}</p>
+                        </div>
+                    </div>
+
+                    {{-- Benefits --}}
+                    <div class="mb-6 space-y-2.5">
+                        <div class="flex items-start gap-2.5">
+                            <div class="mt-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-brand-pink/20 flex-shrink-0">
+                                <i class="fas fa-check text-brand-pink text-[10px]"></i>
+                            </div>
+                            <p class="text-sm text-gray-700">
+                                @if(app()->getLocale() === 'de')
+                                    Flexible Arbeitszeiten und Work-Life-Balance
+                                @elseif(app()->getLocale() === 'fr')
+                                    Horaires flexibles et équilibre travail-vie
+                                @elseif(app()->getLocale() === 'sq')
+                                    Orare fleksibile dhe balancë jetë-punë
+                                @else
+                                    Flexible schedules and work-life balance
+                                @endif
+                            </p>
+                        </div>
+                        <div class="flex items-start gap-2.5">
+                            <div class="mt-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-brand-pink/20 flex-shrink-0">
+                                <i class="fas fa-check text-brand-pink text-[10px]"></i>
+                            </div>
+                            <p class="text-sm text-gray-700">
+                                @if(app()->getLocale() === 'de')
+                                    Weiterbildung und berufliche Entwicklung
+                                @elseif(app()->getLocale() === 'fr')
+                                    Formation continue et développement professionnel
+                                @elseif(app()->getLocale() === 'sq')
+                                    Trajnime dhe zhvillim profesional
+                                @else
+                                    Training and professional development
+                                @endif
+                            </p>
+                        </div>
+                        <div class="flex items-start gap-2.5">
+                            <div class="mt-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-brand-pink/20 flex-shrink-0">
+                                <i class="fas fa-check text-brand-pink text-[10px]"></i>
+                            </div>
+                            <p class="text-sm text-gray-700">
+                                @if(app()->getLocale() === 'de')
+                                    Herzliches Team und familiäre Atmosphäre
+                                @elseif(app()->getLocale() === 'fr')
+                                    Équipe chaleureuse et atmosphère familiale
+                                @elseif(app()->getLocale() === 'sq')
+                                    Ekip i ngrohtë dhe atmosferë familjare
+                                @else
+                                    Warm team and family atmosphere
+                                @endif
+                            </p>
+                        </div>
+                    </div>
+
+                    {{-- CTA Button --}}
+                    <a href="{{ route('jobs.index') }}" 
+                       class="inline-flex items-center gap-2.5 rounded-lg bg-brand-blue px-6 py-3 text-base font-semibold text-white shadow-lg hover:bg-blue-700 hover:shadow-xl transition-all duration-300 group">
+                        <span>{{ __('home.careers_cta') }}</span>
+                        <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform text-sm"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -513,7 +670,7 @@ $services = [
                     <div class="mb-[15px] text-center">
                         <picture>
                             <source srcset="{{ asset('images/logo.webp') }}" type="image/webp">
-                            <img src="{{ asset('images/logo.webp') }}" alt="{{ __('home.nav_brand') }}" class="mx-auto" style="max-width: 80px; height: auto;" loading="lazy">
+                            <img src="{{ asset('images/logo.webp') }}" alt="{{ __('home.nav_brand') }}" class="mx-auto" style="max-width: 80px; height: auto;">
                         </picture>
                     </div>
 

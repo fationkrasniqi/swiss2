@@ -1,6 +1,6 @@
-<x-admin-layout title="Dashboard">
-    <h1 class="text-2xl font-bold text-gray-900">Dashboard</h1>
-    <p class="mt-2 text-gray-600">Welcome, {{ auth()->user()->name }}!</p>
+<x-admin-layout title="{{ __('admin.dashboard') }}">
+    <h1 class="text-2xl font-bold text-gray-900">{{ __('admin.dashboard') }}</h1>
+    <p class="mt-2 text-gray-600">{{ __('admin.welcome', ['name' => auth()->user()->name]) }}</p>
 
     <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         @if(auth()->user()->canViewClients())
@@ -11,7 +11,7 @@
                 </div>
                 <div>
                     <p class="text-2xl font-bold text-gray-900">{{ \App\Models\Client::count() }}</p>
-                    <p class="text-sm text-gray-500">Clients</p>
+                    <p class="text-sm text-gray-500">{{ __('admin.clients') }}</p>
                 </div>
             </div>
         </a>
@@ -25,7 +25,7 @@
                 </div>
                 <div>
                     <p class="text-2xl font-bold text-gray-900">{{ \App\Models\ContactMessage::count() }}</p>
-                    <p class="text-sm text-gray-500">Messages</p>
+                    <p class="text-sm text-gray-500">{{ __('admin.messages') }}</p>
                 </div>
             </div>
         </a>
@@ -39,7 +39,7 @@
                 </div>
                 <div>
                     <p class="text-2xl font-bold text-gray-900">{{ \App\Models\Job::count() }}</p>
-                    <p class="text-sm text-gray-500">Job Postings</p>
+                    <p class="text-sm text-gray-500">{{ __('admin.job_postings') }}</p>
                 </div>
             </div>
         </a>
@@ -51,7 +51,7 @@
                 </div>
                 <div>
                     <p class="text-2xl font-bold text-gray-900">{{ \App\Models\JobApplication::count() }}</p>
-                    <p class="text-sm text-gray-500">Applications</p>
+                    <p class="text-sm text-gray-500">{{ __('admin.applications') }}</p>
                 </div>
             </div>
         </a>
@@ -63,7 +63,7 @@
                 </div>
                 <div>
                     <p class="text-2xl font-bold text-gray-900">{{ \App\Models\User::count() }}</p>
-                    <p class="text-sm text-gray-500">Users</p>
+                    <p class="text-sm text-gray-500">{{ __('admin.users') }}</p>
                 </div>
             </div>
         </a>
@@ -75,7 +75,7 @@
                 </div>
                 <div>
                     <p class="text-2xl font-bold text-gray-900">{{ \App\Models\Canton::count() }}</p>
-                    <p class="text-sm text-gray-500">Cantons</p>
+                    <p class="text-sm text-gray-500">{{ __('admin.cantons') }}</p>
                 </div>
             </div>
         </a>

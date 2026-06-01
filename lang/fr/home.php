@@ -116,6 +116,10 @@ return [
     'team_role_2' => 'Directeur GÃ©nÃ©ral',
     'team_role_3' => 'Responsable des Soins',
     'team_role_4' => 'InfirmiÃ¨re DiplÃ´mÃ©e',
+    
+    'partners_title' => 'Nos Partenaires',
+    'partners_subtitle' => 'Nous travaillons avec des partenaires de confiance pour offrir les meilleurs soins et soutien Ã  nos clients.',
+    
     'team_skill_1_1' => 'GÃ©riatrie',
     'team_skill_1_2' => 'Cardiologie',
     'team_skill_1_3' => '25 ans',
@@ -125,8 +129,12 @@ return [
     'team_skill_3_1' => 'Soins intensifs',
     'team_skill_3_2' => 'Soins des plaies',
     'team_skill_3_3' => '15 ans',
-    
-    'story_title' => 'Notre Histoire',
+        'careers_title' => 'Rejoignez notre équipe',
+    'careers_subtitle' => 'Faites partie de notre équipe et aidez-nous à fournir des soins exceptionnels',
+    'careers_slogan' => 'Votre avenir dans les soins commence ici.',
+    'careers_cta' => 'Voir les offres',
+    'careers_positions' => 'Postes Ouverts',
+        'story_title' => 'Notre Histoire',
     'story_subtitle' => 'Comment tout a commencÃ© et Ã©voluÃ©',
     'timeline_2009_title' => 'Le DÃ©but',
     'timeline_2009_text' => 'FondÃ©e avec la mission d\'offrir des soins de qualitÃ© aux personnes Ã¢gÃ©es.',

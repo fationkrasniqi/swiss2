@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Job;
 use App\Models\JobApplication;
-use App\Models\User;
 use App\Notifications\NewJobApplicationNotification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -15,10 +14,38 @@ class JobApplicationController extends Controller
     /**
      * Display a listing of active jobs.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $jobs = Job::where('is_active', true)->latest()->paginate(10);
-        return view('jobs.index', compact('jobs'));
+        $query = Job::with('canton')->where('is_active', true);
+
+        // Filter by canton if specified
+        if ($request->filled('canton')) {
+            $query->where('canton_id', $request->canton);
+        }
+
+        $jobs = $query->latest()->paginate(10);
+        
+        // Get only cantons that have active jobs with job count
+        $cantons = \App\Models\Canton::whereHas('jobs', function($q) {
+            $q->where('is_active', true);
+        })->withCount(['jobs' => function($q) {
+            $q->where('is_active', true);
+        }])->orderBy('name')->get();
+
+        // Return JSON for AJAX requests
+        if ($request->ajax() || $request->wantsJson()) {
+            return response()->json([
+                'jobs' => $jobs->items(),
+                'pagination' => [
+                    'current_page' => $jobs->currentPage(),
+                    'last_page' => $jobs->lastPage(),
+                    'per_page' => $jobs->perPage(),
+                    'total' => $jobs->total(),
+                ],
+            ]);
+        }
+
+        return view('jobs.index', compact('jobs', 'cantons'));
     }
 
     /**
@@ -28,7 +55,7 @@ class JobApplicationController extends Controller
     {
         if (!$job->is_active) {
             return redirect()->route('jobs.index')
-                ->with('error', 'Kjo punë nuk është më aktive.');
+                ->with('error', __('jobs.job_not_active'));
         }
 
         return view('jobs.apply', compact('job'));
@@ -45,11 +72,17 @@ class JobApplicationController extends Controller
             'email' => 'required|email|max:255',
             'phone' => 'required|string|max:50',
             'cv' => 'required|file|mimes:pdf,doc,docx|max:5120', // Max 5MB
-            'cover_letter' => 'nullable|string',
+            'cover_letter' => 'nullable|file|mimes:pdf,doc,docx|max:5120',
         ]);
 
         // Upload CV
         $cvPath = $request->file('cv')->store('cvs', 'public');
+
+        // Upload Cover Letter (if provided)
+        $coverLetterPath = null;
+        if ($request->hasFile('cover_letter')) {
+            $coverLetterPath = $request->file('cover_letter')->store('cover-letters', 'public');
+        }
 
         // Create application
         $application = JobApplication::create([
@@ -59,14 +92,15 @@ class JobApplicationController extends Controller
             'email' => $validated['email'],
             'phone' => $validated['phone'],
             'cv_path' => $cvPath,
-            'cover_letter' => $validated['cover_letter'] ?? null,
+            'cover_letter' => $coverLetterPath,
         ]);
 
-        // Send notification to admin users
-        $admins = User::all(); // Modify if you have specific admin role
-        Notification::send($admins, new NewJobApplicationNotification($application));
+        // Send notification to admin email
+        $adminEmail = config('mail.admin_notification_email');
+        Notification::route('mail', $adminEmail)
+            ->notify(new NewJobApplicationNotification($application));
 
         return redirect()->route('jobs.index')
-            ->with('success', 'Aplikimi juaj u dërgua me sukses! Do të kontaktoheni së shpejti.');
+            ->with('success', __('jobs.success_message'));
     }
 }

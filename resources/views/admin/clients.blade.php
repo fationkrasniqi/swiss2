@@ -1,6 +1,6 @@
-<x-admin-layout title="Clients">
+<x-admin-layout title="{{ __('admin.page_clients') }}">
     <div class="flex items-center justify-between">
-        <h1 class="text-2xl font-bold text-gray-900">Clients</h1>
+        <h1 class="text-2xl font-bold text-gray-900">{{ __('admin.page_clients') }}</h1>
     </div>
 
     <div class="mt-6 overflow-hidden rounded-xl bg-white shadow-sm">
@@ -8,14 +8,14 @@
             <table class="min-w-full divide-y divide-gray-200">
                 <thead class="bg-gray-50">
                     <tr>
-                        <th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">Name</th>
-                        <th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">Email</th>
-                        <th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">Phone</th>
-                        <th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">Canton</th>
-                        <th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">Services</th>
+                        <th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">{{ __('admin.col_name') }}</th>
+                        <th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">{{ __('admin.col_email') }}</th>
+                        <th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">{{ __('admin.col_phone') }}</th>
+                        <th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">{{ __('admin.col_canton') }}</th>
+                        <th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">{{ __('admin.col_services') }}</th>
                         <!-- <th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">Total</th> -->
-                        <th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">Date</th>
-                        <th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">Actions</th>
+                        <th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">{{ __('admin.col_date') }}</th>
+                        <th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">{{ __('admin.col_actions') }}</th>
                     </tr>
                 </thead>
                 <tbody class="divide-y divide-gray-200">
@@ -67,7 +67,7 @@
                     </tr>
                     @empty
                     <tr>
-                        <td colspan="8" class="px-4 py-8 text-center text-sm text-gray-500">No clients yet.</td>
+                        <td colspan="8" class="px-4 py-8 text-center text-sm text-gray-500">{{ __('admin.no_clients') }}</td>
                     </tr>
                     @endforelse
                 </tbody>

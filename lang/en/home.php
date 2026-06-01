@@ -132,6 +132,10 @@ return [
     'team_role_2' => 'Managing Director',
     'team_role_3' => 'Head of Nursing',
     'team_role_4' => 'Registered Nurse',
+    
+    'partners_title' => 'Our Partners',
+    'partners_subtitle' => 'We work together with trusted partners to provide the best care and support for our clients.',
+    
     'team_skill_1_1' => 'Geriatrics',
     'team_skill_1_2' => 'Cardiology',
     'team_skill_1_3' => '25 years',
@@ -141,8 +145,12 @@ return [
     'team_skill_3_1' => 'Intensive care',
     'team_skill_3_2' => 'Wound care',
     'team_skill_3_3' => '15 years',
-    
-    'story_title' => 'Our Story',
+        'careers_title' => 'Join Our Team',
+    'careers_subtitle' => 'Become part of our team and help us provide exceptional care',
+    'careers_slogan' => 'Your future in care starts here.',
+    'careers_cta' => 'View Openings',
+    'careers_positions' => 'Open Positions',
+        'story_title' => 'Our Story',
     'story_subtitle' => 'How it all started and evolved',
     'timeline_2009_title' => 'The Beginning',
     'timeline_2009_text' => 'Founded with the mission to provide quality care for seniors.',

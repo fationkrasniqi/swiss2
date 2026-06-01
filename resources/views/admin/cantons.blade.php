@@ -1,6 +1,6 @@
-<x-admin-layout title="Canton Pricing">
-    <h1 class="text-2xl font-bold text-gray-900">Canton Pricing</h1>
-    <p class="mt-1 text-sm text-gray-500">Set hourly rates for each canton. Changes update immediately for new bookings.</p>
+<x-admin-layout title="{{ __('admin.page_cantons') }}">
+    <h1 class="text-2xl font-bold text-gray-900">{{ __('admin.page_cantons') }}</h1>
+    <p class="mt-1 text-sm text-gray-500">{{ __('admin.cantons_hint') }}</p>
 
     <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         @foreach($cantons as $canton)
@@ -24,7 +24,7 @@
 
     @if($cantons->isEmpty())
     <div class="mt-6 rounded-xl bg-amber-50 p-6 text-center">
-        <p class="text-sm text-amber-800">No cantons found. Run <code class="rounded bg-amber-100 px-1.5 py-0.5 font-mono text-xs">php artisan db:seed --class=CantonSeeder</code> to populate.</p>
+        <p class="text-sm text-amber-800">{{ __('admin.no_cantons') }}</p>
     </div>
     @endif
 </x-admin-layout>
