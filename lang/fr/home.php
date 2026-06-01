@@ -5,7 +5,6 @@ return [
     'nav_home' => 'Accueil',
     'nav_services' => 'Services',
     'nav_services_details' => 'Nos soins',
-    'nav_jobs' => 'Emplois',
     'nav_gallery' => 'Galerie',
     'nav_contact' => 'Contact',
     
@@ -117,9 +116,7 @@ return [
     'team_role_3' => 'Responsable des Soins',
     'team_role_4' => 'InfirmiÃ¨re DiplÃ´mÃ©e',
     
-    'partners_title' => 'Nos Partenaires',
-    'partners_subtitle' => 'Nous travaillons avec des partenaires de confiance pour offrir les meilleurs soins et soutien Ã  nos clients.',
-    
+
     'team_skill_1_1' => 'GÃ©riatrie',
     'team_skill_1_2' => 'Cardiologie',
     'team_skill_1_3' => '25 ans',
@@ -129,12 +126,8 @@ return [
     'team_skill_3_1' => 'Soins intensifs',
     'team_skill_3_2' => 'Soins des plaies',
     'team_skill_3_3' => '15 ans',
-        'careers_title' => 'Rejoignez notre équipe',
-    'careers_subtitle' => 'Faites partie de notre équipe et aidez-nous à fournir des soins exceptionnels',
-    'careers_slogan' => 'Votre avenir dans les soins commence ici.',
-    'careers_cta' => 'Voir les offres',
-    'careers_positions' => 'Postes Ouverts',
-        'story_title' => 'Notre Histoire',
+    
+    'story_title' => 'Notre Histoire',
     'story_subtitle' => 'Comment tout a commencÃ© et Ã©voluÃ©',
     'timeline_2009_title' => 'Le DÃ©but',
     'timeline_2009_text' => 'FondÃ©e avec la mission d\'offrir des soins de qualitÃ© aux personnes Ã¢gÃ©es.',
@@ -168,5 +161,13 @@ return [
     'story_3_image_alt' => 'Grandir avec un but',
     'mission_title' => 'Notre Mission Aujourd\'hui',
     'mission_text' => 'Nous sommes dÃ©diÃ©s Ã  fournir des soins aux personnes Ã¢gÃ©es compassionnels et professionnels dans toute la Suisse. Chaque jour, notre Ã©quipe travaille pour s\'assurer que les seniors reÃ§oivent la dignitÃ©, l\'attention et le soutien de qualitÃ© qu\'ils mÃ©ritent dans leur propre domicile.',
-    'view_more' => 'Voir plus',
-];
+    'view_more' => 'Voir plus',    
+    // ==================== NEW KEYS (Partners & Jobs) ====================
+    'nav_jobs' => 'Emplois',
+    'partners_title' => 'Nos Partenaires',
+    'partners_subtitle' => 'Nous travaillons avec des partenaires de confiance pour offrir les meilleurs soins et soutien à nos clients.',
+    'careers_title' => 'Rejoignez notre équipe',
+    'careers_subtitle' => 'Faites partie de notre équipe et aidez-nous à fournir des soins exceptionnels',
+    'careers_slogan' => 'Votre avenir dans les soins commence ici.',
+    'careers_cta' => 'Voir les offres',
+    'careers_positions' => 'Postes Ouverts',];

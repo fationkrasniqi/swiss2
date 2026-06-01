@@ -21,7 +21,6 @@ return [
     'nav_home' => 'Home',
     'nav_services' => 'Services',
     'nav_services_details' => 'Our Care',
-    'nav_jobs' => 'Jobs',
     'nav_gallery' => 'Gallery',
     'nav_contact' => 'Contact',
     
@@ -133,9 +132,6 @@ return [
     'team_role_3' => 'Head of Nursing',
     'team_role_4' => 'Registered Nurse',
     
-    'partners_title' => 'Our Partners',
-    'partners_subtitle' => 'We work together with trusted partners to provide the best care and support for our clients.',
-    
     'team_skill_1_1' => 'Geriatrics',
     'team_skill_1_2' => 'Cardiology',
     'team_skill_1_3' => '25 years',
@@ -145,12 +141,8 @@ return [
     'team_skill_3_1' => 'Intensive care',
     'team_skill_3_2' => 'Wound care',
     'team_skill_3_3' => '15 years',
-        'careers_title' => 'Join Our Team',
-    'careers_subtitle' => 'Become part of our team and help us provide exceptional care',
-    'careers_slogan' => 'Your future in care starts here.',
-    'careers_cta' => 'View Openings',
-    'careers_positions' => 'Open Positions',
-        'story_title' => 'Our Story',
+    
+    'story_title' => 'Our Story',
     'story_subtitle' => 'How it all started and evolved',
     'timeline_2009_title' => 'The Beginning',
     'timeline_2009_text' => 'Founded with the mission to provide quality care for seniors.',
@@ -185,4 +177,14 @@ return [
     'mission_title' => 'Our Mission Today',
     'mission_text' => 'We are dedicated to delivering compassionate, professional elderly care throughout Switzerland. Every day, our team works to ensure that seniors receive the dignity, attention, and quality support they deserve in their own homes.',
     'view_more' => 'View more',
+    
+    // ==================== NEW KEYS (Partners & Jobs) ====================
+    'nav_jobs' => 'Jobs',
+    'partners_title' => 'Our Partners',
+    'partners_subtitle' => 'We work together with trusted partners to provide the best care and support for our clients.',
+    'careers_title' => 'Join Our Team',
+    'careers_subtitle' => 'Become part of our team and help us provide exceptional care',
+    'careers_slogan' => 'Your future in care starts here.',
+    'careers_cta' => 'View Openings',
+    'careers_positions' => 'Open Positions',
 ];
