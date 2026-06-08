@@ -7,6 +7,7 @@ use App\Models\Job;
 use App\Models\JobApplication;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class JobController extends Controller
 {
@@ -52,6 +53,11 @@ class JobController extends Controller
             'requirements_de' => 'nullable|string',
             'requirements_sq' => 'nullable|string',
             'requirements_fr' => 'nullable|string',
+            'we_offer'       => 'nullable|string',
+            'we_offer_en'    => 'nullable|string',
+            'we_offer_de'    => 'nullable|string',
+            'we_offer_sq'    => 'nullable|string',
+            'we_offer_fr'    => 'nullable|string',
             'is_active'      => 'boolean',
         ]);
 
@@ -103,6 +109,11 @@ class JobController extends Controller
             'requirements_de' => 'nullable|string',
             'requirements_sq' => 'nullable|string',
             'requirements_fr' => 'nullable|string',
+            'we_offer'       => 'nullable|string',
+            'we_offer_en'    => 'nullable|string',
+            'we_offer_de'    => 'nullable|string',
+            'we_offer_sq'    => 'nullable|string',
+            'we_offer_fr'    => 'nullable|string',
             'is_active'      => 'boolean',
         ]);
 
@@ -142,13 +153,67 @@ class JobController extends Controller
     }
 
     /**
-     * Download cover letter as PDF
+     * Download or preview the uploaded cover letter file.
      */
     public function coverLetterPdf(JobApplication $application)
     {
-        $application->load('job');
-        $pdf = Pdf::loadView('pdf.cover-letter', compact('application'));
-        $filename = 'cover-letter-' . str($application->first_name . '-' . $application->last_name)->slug() . '.pdf';
-        return $pdf->download($filename);
+        try {
+            $coverLetterPath = $application->cover_letter;
+
+            if (!$coverLetterPath) {
+                return response()->json([
+                    'error' => 'Cover letter not found',
+                ], 404);
+            }
+
+            // New flow: cover letter is stored as an uploaded file path.
+            if (Storage::disk('public')->exists($coverLetterPath)) {
+                $absolutePath = Storage::disk('public')->path($coverLetterPath);
+                $extension = strtolower(pathinfo($coverLetterPath, PATHINFO_EXTENSION));
+                $filename = 'cover-letter-' . str($application->first_name . '-' . $application->last_name)->slug();
+                $downloadName = $filename . ($extension ? '.' . $extension : '');
+                $mimeType = Storage::disk('public')->mimeType($coverLetterPath) ?: 'application/octet-stream';
+
+                return response()->file($absolutePath, [
+                    'Content-Type' => $mimeType,
+                    // Keep PDFs inline for quick admin preview; download office docs.
+                    'Content-Disposition' => ($extension === 'pdf' ? 'inline' : 'attachment') . '; filename="' . $downloadName . '"',
+                    'X-Content-Type-Options' => 'nosniff',
+                ]);
+            }
+
+            // Legacy fallback: older records may contain plain cover-letter text.
+            ini_set('memory_limit', '256M');
+            set_time_limit(60);
+
+            $application->load('job');
+
+            $filename = 'cover-letter-' . str($application->first_name . '-' . $application->last_name)->slug() . '.pdf';
+
+            $pdf = Pdf::loadView('pdf.cover-letter', compact('application'))
+                ->setPaper('a4', 'portrait');
+
+            $output = $pdf->output();
+
+            return response($output, 200)
+                ->header('Content-Type', 'application/pdf')
+                ->header('Content-Disposition', 'attachment; filename="' . $filename . '"')
+                ->header('Content-Length', strlen($output))
+                ->header('Cache-Control', 'private, max-age=0, must-revalidate')
+                ->header('Pragma', 'public');
+                
+        } catch (\Exception $e) {
+            // Log error
+            \Log::error('PDF Generation Error: ' . $e->getMessage(), [
+                'application_id' => $application->id,
+                'trace' => $e->getTraceAsString()
+            ]);
+            
+            // Return error response
+            return response()->json([
+                'error' => 'Failed to generate PDF',
+                'message' => config('app.debug') ? $e->getMessage() : 'Please contact administrator'
+            ], 500);
+        }
     }
 }

@@ -58,6 +58,14 @@
                         <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                     @enderror
                 </div>
+                <div>
+                    <label for="we_offer_en" class="block text-sm font-medium text-gray-700">We Offer (English)</label>
+                    <textarea name="we_offer_en" id="we_offer_en" rows="4"
+                        class="mt-1 block w-full rounded-lg border border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500">{{ old('we_offer_en', $job->we_offer_en) }}</textarea>
+                    @error('we_offer_en')
+                        <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                    @enderror
+                </div>
             </div>
 
             {{-- DE Fields --}}
@@ -83,6 +91,14 @@
                     <textarea name="requirements_de" id="requirements_de" rows="4"
                         class="mt-1 block w-full rounded-lg border border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500">{{ old('requirements_de', $job->requirements_de) }}</textarea>
                     @error('requirements_de')
+                        <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                    @enderror
+                </div>
+                <div>
+                    <label for="we_offer_de" class="block text-sm font-medium text-gray-700">Was wir bieten (Deutsch)</label>
+                    <textarea name="we_offer_de" id="we_offer_de" rows="4"
+                        class="mt-1 block w-full rounded-lg border border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500">{{ old('we_offer_de', $job->we_offer_de) }}</textarea>
+                    @error('we_offer_de')
                         <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                     @enderror
                 </div>
@@ -114,6 +130,14 @@
                         <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                     @enderror
                 </div>
+                <div>
+                    <label for="we_offer_sq" class="block text-sm font-medium text-gray-700">Ne Ofrojmë (Shqip)</label>
+                    <textarea name="we_offer_sq" id="we_offer_sq" rows="4"
+                        class="mt-1 block w-full rounded-lg border border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500">{{ old('we_offer_sq', $job->we_offer_sq) }}</textarea>
+                    @error('we_offer_sq')
+                        <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                    @enderror
+                </div>
             </div>
 
             {{-- French Fields --}}
@@ -139,6 +163,14 @@
                     <textarea name="requirements_fr" id="requirements_fr" rows="4"
                         class="mt-1 block w-full rounded-lg border border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500">{{ old('requirements_fr', $job->requirements_fr) }}</textarea>
                     @error('requirements_fr')
+                        <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                    @enderror
+                </div>
+                <div>
+                    <label for="we_offer_fr" class="block text-sm font-medium text-gray-700">Ce que nous offrons (Français)</label>
+                    <textarea name="we_offer_fr" id="we_offer_fr" rows="4"
+                        class="mt-1 block w-full rounded-lg border border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500">{{ old('we_offer_fr', $job->we_offer_fr) }}</textarea>
+                    @error('we_offer_fr')
                         <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                     @enderror
                 </div>
@@ -231,10 +263,12 @@ function updateLanguageChecks() {
         const title = document.getElementById('title_' + lang);
         const description = document.getElementById('description_' + lang);
         const requirements = document.getElementById('requirements_' + lang);
+        const weOffer = document.getElementById('we_offer_' + lang);
         
         const hasContent = (title && title.value.trim()) || 
                          (description && description.value.trim()) || 
-                         (requirements && requirements.value.trim());
+                 (requirements && requirements.value.trim()) ||
+                 (weOffer && weOffer.value.trim());
         
         const checkMark = document.querySelector('#tab-' + lang + ' .tab-check');
         if (hasContent && checkMark) {

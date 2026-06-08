@@ -27,6 +27,11 @@ class Job extends Model
         'requirements_de',
         'requirements_sq',
         'requirements_fr',
+        'we_offer',
+        'we_offer_en',
+        'we_offer_de',
+        'we_offer_sq',
+        'we_offer_fr',
         'is_active',
     ];
 
@@ -73,6 +78,19 @@ class Job extends Model
             'sq' => $this->requirements_sq ?? $this->requirements,
             'fr' => $this->requirements_fr ?? $this->requirements,
             default => $this->requirements
+        };
+    }
+
+    public function getLocalizedWeOffer(): ?string
+    {
+        $locale = app()->getLocale();
+
+        return match($locale) {
+            'en' => $this->we_offer_en ?? $this->we_offer,
+            'de' => $this->we_offer_de ?? $this->we_offer,
+            'sq' => $this->we_offer_sq ?? $this->we_offer,
+            'fr' => $this->we_offer_fr ?? $this->we_offer,
+            default => $this->we_offer
         };
     }
 
